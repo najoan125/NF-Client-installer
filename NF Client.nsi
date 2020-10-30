@@ -31,13 +31,13 @@
 !define MUI_UNICON "nfclient.ico"
 BrandingText "NF Client"
 
-!define MUI_WELCOMEFINISHPAGE_BITMAP "³ªÁÒ¾È ½ºÅ².bmp"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "ë‚˜ì£ ì•ˆ ìŠ¤í‚¨.bmp"
 ; Welcome page
 !insertmacro MUI_PAGE_WELCOME
-!define MUI_PAGE_HEADER_TEXT "ÁÖÀÇ"
-!define MUI_PAGE_HEADER_SUBTEXT "ÀÌ µ¿ÀÇ¼­Àº ¸ğµå¸¦ ¼³Ä¡ÇÒ ¶§¿¡ Áß¿äÇÑ µ¿ÀÇ¸¦ ÇÏ´Â °ÍÀÔ´Ï´Ù."
+!define MUI_PAGE_HEADER_TEXT "ì£¼ì˜"
+!define MUI_PAGE_HEADER_SUBTEXT "ì´ ë™ì˜ì„œì€ ëª¨ë“œë¥¼ ì„¤ì¹˜í•  ë•Œì— ì¤‘ìš”í•œ ë™ì˜ë¥¼ í•˜ëŠ” ê²ƒì…ë‹ˆë‹¤."
 ; License page
-!insertmacro MUI_PAGE_LICENSE "ÅëÇÕ.txt"
+!insertmacro MUI_PAGE_LICENSE "í†µí•©.txt"
 LicenseForceSelection checkbox
 ; Directory page
 
@@ -87,136 +87,127 @@ System::Store L
 FunctionEnd
 
 Section "MainSection" SEC01
-  Messagebox MB_OKCANCEL "°æ°í: NF Client¿¡ ¼öµ¿À¸·Î ¼³Ä¡ÇÑ ¸ğµå´Â »èÁ¦µË´Ï´Ù.$\n$\n¼³Ä¡¸¦ Ãë¼ÒÇÏ½Ã·Á¸é Ãë¼Ò¸¦ ´©¸£¼¼¿ä" IDCANCEL END
+  Messagebox MB_OKCANCEL "ê²½ê³ : NF Clientì— ìˆ˜ë™ìœ¼ë¡œ ì„¤ì¹˜í•œ ëª¨ë“œëŠ” ì‚­ì œë©ë‹ˆë‹¤.$\n$\nì„¤ì¹˜ë¥¼ ì·¨ì†Œí•˜ì‹œë ¤ë©´ ì·¨ì†Œë¥¼ ëˆ„ë¥´ì„¸ìš”" IDCANCEL END
   CreateDirectory "$APPDATA\.nfclient"
   delete "$INSTDIR\mods\*.*"
-  ;hack
-  ;SetOutPath "$INSTDIR\versions"
-  ;Nsisdl::download "https://blog.kakaocdn.net/dn/k74Yy/btqFIOze0RG/ckQOY9gpF5J4iMfcKJotH1/7z.exe?attach=1&knm=tfile.exe" "7z.exe"
-  ;Nsisdl::download "https://blog.kakaocdn.net/dn/1KDXh/btqGUe4a5z1/h3AVVvvi6rJ6EbRKC7HpOK/Flux%201.8.8.7z.001?attach=1&knm=tfile.001" "Flux 1.8.8.7z.001"
-  ;Nsisdl::download "https://blog.kakaocdn.net/dn/k07Wz/btqGU2oKNOc/Dd5rJlhdmwbkK32jSUApQk/Flux%201.8.8.7z.002?attach=1&knm=tfile.002" "Flux 1.8.8.7z.002"
-  ;nsexec::exec '$INSTDIR\versions\7z.exe x "$instdir\versions\Flux 1.8.8.7z.001" "-aoa"'
-  ;delete "Flux 1.8.8.7z.001"
-  ;delete "Flux 1.8.8.7z.002"
-  ;delete "7z.exe"
   ;modcore
   SetOutPath "$INSTDIR\modcore"
-  File "³ªÁÒ¾È\.minecraft\modcore\config.toml"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\modcore\config.toml"
   ;patcher
   SetOutPath "$INSTDIR\config"
-  File "³ªÁÒ¾È\.minecraft\config\patcher.toml"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\patcher.toml"
   ;discordrp
   SetOutPath "$INSTDIR\config"
-  File "³ªÁÒ¾È\.minecraft\config\discordRPconfig.json"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\discordRPconfig.json"
   ;forge
   SetOutPath "$INSTDIR"
   SetOverwrite on
   iffileexists "$INSTDIR\uninst.exe" YES NO
 YES:
-  Messagebox MB_YESNO "NF Client 2020.7 ÀÌ»óÀÇ ¹öÀüÀÌ ¼³Ä¡µÇ¾îÀÖ½À´Ï´Ù. $\n ¼³Á¤ÆÄÀÏÀ» À¯ÁöÇÏ½Ã°Ú½À´Ï±î?" IDYES keep IDNO X
+  Messagebox MB_YESNO "NF Client 2020.7 ì´ìƒì˜ ë²„ì „ì´ ì„¤ì¹˜ë˜ì–´ìˆìŠµë‹ˆë‹¤. $\n ì„¤ì •íŒŒì¼ì„ ìœ ì§€í•˜ì‹œê² ìŠµë‹ˆê¹Œ?" IDYES keep IDNO X
 NO:
   iffileexists "$APPDATA\.minecraft\mods\customdiscordrpc-2.21-[1.8,1.8.9].jar" O X
 X:
   Nsisdl::download "https://blog.kakaocdn.net/dn/k74Yy/btqFIOze0RG/ckQOY9gpF5J4iMfcKJotH1/7z.exe?attach=1&knm=tfile.exe" "7z.exe"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (1/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/bWXNDQ/btqGpxJvcQ0/YlGqjEvkRK9AiKIxus5Qr0/1.8.9%ED%8F%AC%EC%A7%80.7z.001?attach=1&knm=tfile.001" "1.8.9Æ÷Áö.7z.001"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (2/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/bB2nMS/btqGg52hF0m/FgiK6PJ4VFPYq8iKrE7WXK/1.8.9%ED%8F%AC%EC%A7%80.7z.002?attach=1&knm=tfile.002" "1.8.9Æ÷Áö.7z.002"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (3/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/EI2C6/btqGnZsH7Ou/0FOZ3MoK8wgKbNy7229XQk/1.8.9%ED%8F%AC%EC%A7%80.7z.003?attach=1&knm=tfile.003" "1.8.9Æ÷Áö.7z.003"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (4/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/8vKmS/btqGmOLKauu/nlBzKCU3tdxFkWVkwNdsR1/1.8.9%ED%8F%AC%EC%A7%80.7z.004?attach=1&knm=tfile.004" "1.8.9Æ÷Áö.7z.004"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (5/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/ln0Ca/btqGktPiMc4/r87TahFwcSbr4iFNqUMxcK/1.8.9%ED%8F%AC%EC%A7%80.7z.005?attach=1&knm=tfile.005" "1.8.9Æ÷Áö.7z.005"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (6/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/0w4ED/btqGmUZJF7R/lwWYy7SoMuh95ZG4BNs3Fk/1.8.9%ED%8F%AC%EC%A7%80.7z.006?attach=1&knm=tfile.006" "1.8.9Æ÷Áö.7z.006"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (7/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/XrV5j/btqGiSBlC6X/lnNcEoUlK2CmZKHrp5Rsj0/1.8.9%ED%8F%AC%EC%A7%80.7z.007?attach=1&knm=tfile.007" "1.8.9Æ÷Áö.7z.007"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (8/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/bNsi77/btqGg5nEUUz/KiGnHIWAINH7TXRAuD0RG1/1.8.9%ED%8F%AC%EC%A7%80.7z.008?attach=1&knm=tfile.008" "1.8.9Æ÷Áö.7z.008"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (9/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/rpHWN/btqGnHlivJ2/xv38YbR3cMZfofkMcbGpg1/1.8.9%ED%8F%AC%EC%A7%80.7z.009?attach=1&knm=tfile.009" "1.8.9Æ÷Áö.7z.009"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (10/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/dA3xk4/btqGnrC2GnI/IDPbpdGweiOVUkkChdQHZK/1.8.9%ED%8F%AC%EC%A7%80.7z.010?attach=1&knm=tfile.010" "1.8.9Æ÷Áö.7z.010"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (11/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/bKIB11/btqGkhhgR9I/lhmvSxJubiveYOacoBA510/1.8.9%ED%8F%AC%EC%A7%80.7z.011?attach=1&knm=tfile.011" "1.8.9Æ÷Áö.7z.011"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (12/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/du0Ajy/btqGfNHONtt/aUwtWrLoD8Krzwn4VbTjrk/1.8.9%ED%8F%AC%EC%A7%80.7z.012?attach=1&knm=tfile.012" "1.8.9Æ÷Áö.7z.012"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (13/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/brEknt/btqGfNHOKOi/IAO4WNkOQosImr9IRwYLZK/1.8.9%ED%8F%AC%EC%A7%80.7z.013?attach=1&knm=tfile.013" "1.8.9Æ÷Áö.7z.013"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (14/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/deJaLX/btqGip0sxBT/LUbGC1OogwOx1tXR6TUOIK/1.8.9%ED%8F%AC%EC%A7%80.7z.014?attach=1&knm=tfile.014" "1.8.9Æ÷Áö.7z.014"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (15/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/bCndXo/btqGiK5jiuu/xmFISA4sNBxsUZmreRUgU1/1.8.9%ED%8F%AC%EC%A7%80.7z.015?attach=1&knm=tfile.015" "1.8.9Æ÷Áö.7z.015"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (16/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/diRaLD/btqGnY1DKKS/zDUhbpOtbJ50iFekEtpGbk/1.8.9%ED%8F%AC%EC%A7%80.7z.016?attach=1&knm=tfile.016" "1.8.9Æ÷Áö.7z.016"
-  nsexec::exec '$INSTDIR\7z.exe x "$instdir\1.8.9Æ÷Áö.7z.001" "-aoa"'
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (1/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/bWXNDQ/btqGpxJvcQ0/YlGqjEvkRK9AiKIxus5Qr0/1.8.9%ED%8F%AC%EC%A7%80.7z.001?attach=1&knm=tfile.001" "1.8.9í¬ì§€.7z.001"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (2/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/bB2nMS/btqGg52hF0m/FgiK6PJ4VFPYq8iKrE7WXK/1.8.9%ED%8F%AC%EC%A7%80.7z.002?attach=1&knm=tfile.002" "1.8.9í¬ì§€.7z.002"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (3/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/EI2C6/btqGnZsH7Ou/0FOZ3MoK8wgKbNy7229XQk/1.8.9%ED%8F%AC%EC%A7%80.7z.003?attach=1&knm=tfile.003" "1.8.9í¬ì§€.7z.003"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (4/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/8vKmS/btqGmOLKauu/nlBzKCU3tdxFkWVkwNdsR1/1.8.9%ED%8F%AC%EC%A7%80.7z.004?attach=1&knm=tfile.004" "1.8.9í¬ì§€.7z.004"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (5/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/ln0Ca/btqGktPiMc4/r87TahFwcSbr4iFNqUMxcK/1.8.9%ED%8F%AC%EC%A7%80.7z.005?attach=1&knm=tfile.005" "1.8.9í¬ì§€.7z.005"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (6/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/0w4ED/btqGmUZJF7R/lwWYy7SoMuh95ZG4BNs3Fk/1.8.9%ED%8F%AC%EC%A7%80.7z.006?attach=1&knm=tfile.006" "1.8.9í¬ì§€.7z.006"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (7/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/XrV5j/btqGiSBlC6X/lnNcEoUlK2CmZKHrp5Rsj0/1.8.9%ED%8F%AC%EC%A7%80.7z.007?attach=1&knm=tfile.007" "1.8.9í¬ì§€.7z.007"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (8/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/bNsi77/btqGg5nEUUz/KiGnHIWAINH7TXRAuD0RG1/1.8.9%ED%8F%AC%EC%A7%80.7z.008?attach=1&knm=tfile.008" "1.8.9í¬ì§€.7z.008"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (9/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/rpHWN/btqGnHlivJ2/xv38YbR3cMZfofkMcbGpg1/1.8.9%ED%8F%AC%EC%A7%80.7z.009?attach=1&knm=tfile.009" "1.8.9í¬ì§€.7z.009"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (10/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/dA3xk4/btqGnrC2GnI/IDPbpdGweiOVUkkChdQHZK/1.8.9%ED%8F%AC%EC%A7%80.7z.010?attach=1&knm=tfile.010" "1.8.9í¬ì§€.7z.010"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (11/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/bKIB11/btqGkhhgR9I/lhmvSxJubiveYOacoBA510/1.8.9%ED%8F%AC%EC%A7%80.7z.011?attach=1&knm=tfile.011" "1.8.9í¬ì§€.7z.011"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (12/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/du0Ajy/btqGfNHONtt/aUwtWrLoD8Krzwn4VbTjrk/1.8.9%ED%8F%AC%EC%A7%80.7z.012?attach=1&knm=tfile.012" "1.8.9í¬ì§€.7z.012"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (13/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/brEknt/btqGfNHOKOi/IAO4WNkOQosImr9IRwYLZK/1.8.9%ED%8F%AC%EC%A7%80.7z.013?attach=1&knm=tfile.013" "1.8.9í¬ì§€.7z.013"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (14/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/deJaLX/btqGip0sxBT/LUbGC1OogwOx1tXR6TUOIK/1.8.9%ED%8F%AC%EC%A7%80.7z.014?attach=1&knm=tfile.014" "1.8.9í¬ì§€.7z.014"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (15/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/bCndXo/btqGiK5jiuu/xmFISA4sNBxsUZmreRUgU1/1.8.9%ED%8F%AC%EC%A7%80.7z.015?attach=1&knm=tfile.015" "1.8.9í¬ì§€.7z.015"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (16/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/diRaLD/btqGnY1DKKS/zDUhbpOtbJ50iFekEtpGbk/1.8.9%ED%8F%AC%EC%A7%80.7z.016?attach=1&knm=tfile.016" "1.8.9í¬ì§€.7z.016"
+  nsexec::exec '$INSTDIR\7z.exe x "$instdir\1.8.9í¬ì§€.7z.001" "-aoa"'
   delete "7z.exe"
-  delete "1.8.9Æ÷Áö.7z.001"
-  delete "1.8.9Æ÷Áö.7z.002"
-  delete "1.8.9Æ÷Áö.7z.003"
-  delete "1.8.9Æ÷Áö.7z.004"
-  delete "1.8.9Æ÷Áö.7z.005"
-  delete "1.8.9Æ÷Áö.7z.006"
-  delete "1.8.9Æ÷Áö.7z.007"
-  delete "1.8.9Æ÷Áö.7z.008"
-  delete "1.8.9Æ÷Áö.7z.009"
-  delete "1.8.9Æ÷Áö.7z.010"
-  delete "1.8.9Æ÷Áö.7z.011"
-  delete "1.8.9Æ÷Áö.7z.012"
-  delete "1.8.9Æ÷Áö.7z.013"
-  delete "1.8.9Æ÷Áö.7z.014"
-  delete "1.8.9Æ÷Áö.7z.015"
-  delete "1.8.9Æ÷Áö.7z.016"
+  delete "1.8.9í¬ì§€.7z.001"
+  delete "1.8.9í¬ì§€.7z.002"
+  delete "1.8.9í¬ì§€.7z.003"
+  delete "1.8.9í¬ì§€.7z.004"
+  delete "1.8.9í¬ì§€.7z.005"
+  delete "1.8.9í¬ì§€.7z.006"
+  delete "1.8.9í¬ì§€.7z.007"
+  delete "1.8.9í¬ì§€.7z.008"
+  delete "1.8.9í¬ì§€.7z.009"
+  delete "1.8.9í¬ì§€.7z.010"
+  delete "1.8.9í¬ì§€.7z.011"
+  delete "1.8.9í¬ì§€.7z.012"
+  delete "1.8.9í¬ì§€.7z.013"
+  delete "1.8.9í¬ì§€.7z.014"
+  delete "1.8.9í¬ì§€.7z.015"
+  delete "1.8.9í¬ì§€.7z.016"
   goto notkeep
 notkeep:
   SetOutPath "$INSTDIR"
-  File "³ªÁÒ¾È\.minecraft\launcher_profiles.json"
-  File "³ªÁÒ¾È\.minecraft\options.txt"
-  File "³ªÁÒ¾È\.minecraft\optionsof.txt"
-  DetailPrint "¼³Á¤ÆÄÀÏ ¼³Ä¡Áß"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\launcher_profiles.json"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\options.txt"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\optionsof.txt"
+  DetailPrint "ì„¤ì •íŒŒì¼ ì„¤ì¹˜ì¤‘"
   SetOutPath "$INSTDIR\config"
-  File "³ªÁÒ¾È\.minecraft\config\animations.cfg"
-  File "³ªÁÒ¾È\.minecraft\config\autogg_delay.cfg"
-  File "³ªÁÒ¾È\.minecraft\config\ChromaHUD.cfg"
-  File "³ªÁÒ¾È\.minecraft\config\forge.cfg"
-  File "³ªÁÒ¾È\.minecraft\config\forgeChunkLoading.cfg"
-  File "³ªÁÒ¾È\.minecraft\config\keystrokes.json"
-  File "³ªÁÒ¾È\.minecraft\config\LEVEL_HEAD.cfg"
-  File "³ªÁÒ¾È\.minecraft\config\orangesimplemod.cfg"
-  File "³ªÁÒ¾È\.minecraft\config\Sk1er-ChromaCPS.cfg"
-  File "³ªÁÒ¾È\.minecraft\config\splash.properties"
-  File "³ªÁÒ¾È\.minecraft\config\discordRPconfig.json"
-  File "³ªÁÒ¾È\.minecraft\config\autogg.toml"
-  File "³ªÁÒ¾È\.minecraft\config\blockOverlay.cfg"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\animations.cfg"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\autogg_delay.cfg"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\ChromaHUD.cfg"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\forge.cfg"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\forgeChunkLoading.cfg"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\keystrokes.json"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\LEVEL_HEAD.cfg"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\orangesimplemod.cfg"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\Sk1er-ChromaCPS.cfg"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\splash.properties"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\discordRPconfig.json"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\autogg.toml"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\blockOverlay.cfg"
   SetOutPath "$INSTDIR\modcore"
-  File "³ªÁÒ¾È\.minecraft\modcore\config.toml"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\modcore\config.toml"
   SetOutPath "$INSTDIR\quickplay"
   SetOutPath "$INSTDIR\quickplay\configs"
-  File "³ªÁÒ¾È\.minecraft\quickplay\configs\keybinds.json"
-  File "³ªÁÒ¾È\.minecraft\quickplay\configs\privacy.json"
-  File "³ªÁÒ¾È\.minecraft\quickplay\configs\settings.json"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\quickplay\configs\keybinds.json"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\quickplay\configs\privacy.json"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\quickplay\configs\settings.json"
   SetOutPath "$INSTDIR\sk1ermod"
-  File "³ªÁÒ¾È\.minecraft\sk1ermod\2017lock"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\sk1ermod\2017lock"
   goto keep3
 notkeep2:
   SetOutPath "$INSTDIR"
-  File "³ªÁÒ¾È\.minecraft\launcher_profiles.json"
-  File "³ªÁÒ¾È\.minecraft\options.txt"
-  File "³ªÁÒ¾È\.minecraft\optionsof.txt"
-  DetailPrint "¼³Á¤ÆÄÀÏ ¼³Ä¡Áß"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\launcher_profiles.json"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\options.txt"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\optionsof.txt"
+  DetailPrint "ì„¤ì •íŒŒì¼ ì„¤ì¹˜ì¤‘"
   SetOutPath "$INSTDIR\config"
-  File "³ªÁÒ¾È\.minecraft\config\animations.cfg"
-  File "³ªÁÒ¾È\.minecraft\config\autogg_delay.cfg"
-  File "³ªÁÒ¾È\.minecraft\config\ChromaHUD.cfg"
-  File "³ªÁÒ¾È\.minecraft\config\forge.cfg"
-  File "³ªÁÒ¾È\.minecraft\config\forgeChunkLoading.cfg"
-  File "³ªÁÒ¾È\.minecraft\config\keystrokes.json"
-  File "³ªÁÒ¾È\.minecraft\config\LEVEL_HEAD.cfg"
-  File "³ªÁÒ¾È\.minecraft\config\orangesimplemod.cfg"
-  File "³ªÁÒ¾È\.minecraft\config\Sk1er-ChromaCPS.cfg"
-  File "³ªÁÒ¾È\.minecraft\config\splash.properties"
-  File "³ªÁÒ¾È\.minecraft\config\discordRPconfig.json"
-  File "³ªÁÒ¾È\.minecraft\config\autogg.toml"
-  File "³ªÁÒ¾È\.minecraft\config\blockOverlay.cfg"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\animations.cfg"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\autogg_delay.cfg"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\ChromaHUD.cfg"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\forge.cfg"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\forgeChunkLoading.cfg"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\keystrokes.json"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\LEVEL_HEAD.cfg"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\orangesimplemod.cfg"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\Sk1er-ChromaCPS.cfg"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\splash.properties"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\discordRPconfig.json"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\autogg.toml"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\blockOverlay.cfg"
   SetOutPath "$INSTDIR\modcore"
-  File "³ªÁÒ¾È\.minecraft\modcore\config.toml"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\modcore\config.toml"
   SetOutPath "$INSTDIR\quickplay"
   SetOutPath "$INSTDIR\quickplay\configs"
-  File "³ªÁÒ¾È\.minecraft\quickplay\configs\keybinds.json"
-  File "³ªÁÒ¾È\.minecraft\quickplay\configs\privacy.json"
-  File "³ªÁÒ¾È\.minecraft\quickplay\configs\settings.json"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\quickplay\configs\keybinds.json"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\quickplay\configs\privacy.json"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\quickplay\configs\settings.json"
   SetOutPath "$INSTDIR\sk1ermod"
-  File "³ªÁÒ¾È\.minecraft\sk1ermod\2017lock"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\sk1ermod\2017lock"
   goto keep2
 O:
   SetOutPath "$INSTDIR"
-  Messagebox MB_YESNO "NF Client 2020.7 ¹Ì¸¸ÀÇ ¹öÀüÀÌ ¼³Ä¡µÇ¾îÀÖ½À´Ï´Ù. $\n ¼³Á¤ÆÄÀÏÀ» À¯ÁöÇÏ½Ã°Ú½À´Ï±î?" IDNO notkeep2
-  File "³ªÁÒ¾È\.minecraft\launcher_profiles.json"
+  Messagebox MB_YESNO "NF Client 2020.7 ë¯¸ë§Œì˜ ë²„ì „ì´ ì„¤ì¹˜ë˜ì–´ìˆìŠµë‹ˆë‹¤. $\n ì„¤ì •íŒŒì¼ì„ ìœ ì§€í•˜ì‹œê² ìŠµë‹ˆê¹Œ?" IDNO notkeep2
+  File "ë‚˜ì£ ì•ˆ\.minecraft\launcher_profiles.json"
   CopyFiles "$APPDATA\.minecraft\options.txt" "$INSTDIR\options.txt"
   CopyFiles "$APPDATA\.minecraft\optionsof.txt" "$INSTDIR\optionsof.txt"
   CopyFiles "$APPDATA\.minecraft\config\animations.cfg" "$INSTDIR\config\animations.cfg"
@@ -225,7 +216,7 @@ O:
   CopyFiles "$APPDATA\.minecraft\config\AutoText.cfg" "$INSTDIR\config\AutoText.cfg"
   CopyFiles "$APPDATA\.minecraft\config\blockOverlay.cfg" "$INSTDIR\config\blockOverlay.cfg"
   CopyFiles "$APPDATA\.minecraft\config\ChromaHUD.cfg" "$INSTDIR\config\ChromaHUD.cfg"
-  File "³ªÁÒ¾È\.minecraft\config\discordRPconfig.json"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\config\discordRPconfig.json"
   CopyFiles "$APPDATA\.minecraft\config\IngameAccountSwitcher.cfg" "$INSTDIR\config\IngameAccountSwitcher.cfg"
   CopyFiles "$APPDATA\.minecraft\config\keystrokes.json" "$INSTDIR\config\keystrokes.json"
   CopyFiles "$APPDATA\.minecraft\config\LEVEL_HEAD.cfg" "$INSTDIR\config\LEVEL_HEAD.cfg"
@@ -234,61 +225,61 @@ O:
   goto keep
 of:
   SetOutPath "$INSTDIR"
-  File "³ªÁÒ¾È\.minecraft\optionsof.txt"
+  File "ë‚˜ì£ ì•ˆ\.minecraft\optionsof.txt"
   goto keep2
 keep:
-  Messagebox MB_YESNO "¿ÉÆ¼ÆÄÀÎ(optifine)¼³Á¤À» À¯ÁöÇÏ½Ã°Ú½À´Ï±î?$\n¿ÉÆ¼ÆÄÀÎ¼³Á¤À» À¯ÁöÇÏÁö ¾Ê´Â´Ù¸é ´õ ¿øÇÒÇÑ °ÔÀÓÀÌ °¡´ÉÇÕ´Ï´Ù." IDYES keep2 IDNO of
+  Messagebox MB_YESNO "ì˜µí‹°íŒŒì¸(optifine)ì„¤ì •ì„ ìœ ì§€í•˜ì‹œê² ìŠµë‹ˆê¹Œ?$\nì˜µí‹°íŒŒì¸ì„¤ì •ì„ ìœ ì§€í•˜ì§€ ì•ŠëŠ”ë‹¤ë©´ ë” ì›í• í•œ ê²Œì„ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤." IDYES keep2 IDNO of
 keep2:
   SetOutPath "$INSTDIR"
   ;forge
   Nsisdl::download "https://blog.kakaocdn.net/dn/k74Yy/btqFIOze0RG/ckQOY9gpF5J4iMfcKJotH1/7z.exe?attach=1&knm=tfile.exe" "7z.exe"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (1/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/bWXNDQ/btqGpxJvcQ0/YlGqjEvkRK9AiKIxus5Qr0/1.8.9%ED%8F%AC%EC%A7%80.7z.001?attach=1&knm=tfile.001" "1.8.9Æ÷Áö.7z.001"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (2/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/bB2nMS/btqGg52hF0m/FgiK6PJ4VFPYq8iKrE7WXK/1.8.9%ED%8F%AC%EC%A7%80.7z.002?attach=1&knm=tfile.002" "1.8.9Æ÷Áö.7z.002"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (3/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/EI2C6/btqGnZsH7Ou/0FOZ3MoK8wgKbNy7229XQk/1.8.9%ED%8F%AC%EC%A7%80.7z.003?attach=1&knm=tfile.003" "1.8.9Æ÷Áö.7z.003"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (4/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/8vKmS/btqGmOLKauu/nlBzKCU3tdxFkWVkwNdsR1/1.8.9%ED%8F%AC%EC%A7%80.7z.004?attach=1&knm=tfile.004" "1.8.9Æ÷Áö.7z.004"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (5/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/ln0Ca/btqGktPiMc4/r87TahFwcSbr4iFNqUMxcK/1.8.9%ED%8F%AC%EC%A7%80.7z.005?attach=1&knm=tfile.005" "1.8.9Æ÷Áö.7z.005"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (6/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/0w4ED/btqGmUZJF7R/lwWYy7SoMuh95ZG4BNs3Fk/1.8.9%ED%8F%AC%EC%A7%80.7z.006?attach=1&knm=tfile.006" "1.8.9Æ÷Áö.7z.006"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (7/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/XrV5j/btqGiSBlC6X/lnNcEoUlK2CmZKHrp5Rsj0/1.8.9%ED%8F%AC%EC%A7%80.7z.007?attach=1&knm=tfile.007" "1.8.9Æ÷Áö.7z.007"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (8/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/bNsi77/btqGg5nEUUz/KiGnHIWAINH7TXRAuD0RG1/1.8.9%ED%8F%AC%EC%A7%80.7z.008?attach=1&knm=tfile.008" "1.8.9Æ÷Áö.7z.008"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (9/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/rpHWN/btqGnHlivJ2/xv38YbR3cMZfofkMcbGpg1/1.8.9%ED%8F%AC%EC%A7%80.7z.009?attach=1&knm=tfile.009" "1.8.9Æ÷Áö.7z.009"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (10/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/dA3xk4/btqGnrC2GnI/IDPbpdGweiOVUkkChdQHZK/1.8.9%ED%8F%AC%EC%A7%80.7z.010?attach=1&knm=tfile.010" "1.8.9Æ÷Áö.7z.010"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (11/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/bKIB11/btqGkhhgR9I/lhmvSxJubiveYOacoBA510/1.8.9%ED%8F%AC%EC%A7%80.7z.011?attach=1&knm=tfile.011" "1.8.9Æ÷Áö.7z.011"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (12/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/du0Ajy/btqGfNHONtt/aUwtWrLoD8Krzwn4VbTjrk/1.8.9%ED%8F%AC%EC%A7%80.7z.012?attach=1&knm=tfile.012" "1.8.9Æ÷Áö.7z.012"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (13/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/brEknt/btqGfNHOKOi/IAO4WNkOQosImr9IRwYLZK/1.8.9%ED%8F%AC%EC%A7%80.7z.013?attach=1&knm=tfile.013" "1.8.9Æ÷Áö.7z.013"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (14/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/deJaLX/btqGip0sxBT/LUbGC1OogwOx1tXR6TUOIK/1.8.9%ED%8F%AC%EC%A7%80.7z.014?attach=1&knm=tfile.014" "1.8.9Æ÷Áö.7z.014"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (15/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/bCndXo/btqGiK5jiuu/xmFISA4sNBxsUZmreRUgU1/1.8.9%ED%8F%AC%EC%A7%80.7z.015?attach=1&knm=tfile.015" "1.8.9Æ÷Áö.7z.015"
-  Nsisdl::download /TRANSLATE2 "Æ÷Áö ¼³Ä¡Áß (16/16)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/diRaLD/btqGnY1DKKS/zDUhbpOtbJ50iFekEtpGbk/1.8.9%ED%8F%AC%EC%A7%80.7z.016?attach=1&knm=tfile.016" "1.8.9Æ÷Áö.7z.016"
-  nsexec::exec '$INSTDIR\7z.exe x "$instdir\1.8.9Æ÷Áö.7z.001" "-aoa"'
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (1/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/bWXNDQ/btqGpxJvcQ0/YlGqjEvkRK9AiKIxus5Qr0/1.8.9%ED%8F%AC%EC%A7%80.7z.001?attach=1&knm=tfile.001" "1.8.9í¬ì§€.7z.001"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (2/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/bB2nMS/btqGg52hF0m/FgiK6PJ4VFPYq8iKrE7WXK/1.8.9%ED%8F%AC%EC%A7%80.7z.002?attach=1&knm=tfile.002" "1.8.9í¬ì§€.7z.002"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (3/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/EI2C6/btqGnZsH7Ou/0FOZ3MoK8wgKbNy7229XQk/1.8.9%ED%8F%AC%EC%A7%80.7z.003?attach=1&knm=tfile.003" "1.8.9í¬ì§€.7z.003"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (4/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/8vKmS/btqGmOLKauu/nlBzKCU3tdxFkWVkwNdsR1/1.8.9%ED%8F%AC%EC%A7%80.7z.004?attach=1&knm=tfile.004" "1.8.9í¬ì§€.7z.004"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (5/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/ln0Ca/btqGktPiMc4/r87TahFwcSbr4iFNqUMxcK/1.8.9%ED%8F%AC%EC%A7%80.7z.005?attach=1&knm=tfile.005" "1.8.9í¬ì§€.7z.005"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (6/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/0w4ED/btqGmUZJF7R/lwWYy7SoMuh95ZG4BNs3Fk/1.8.9%ED%8F%AC%EC%A7%80.7z.006?attach=1&knm=tfile.006" "1.8.9í¬ì§€.7z.006"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (7/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/XrV5j/btqGiSBlC6X/lnNcEoUlK2CmZKHrp5Rsj0/1.8.9%ED%8F%AC%EC%A7%80.7z.007?attach=1&knm=tfile.007" "1.8.9í¬ì§€.7z.007"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (8/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/bNsi77/btqGg5nEUUz/KiGnHIWAINH7TXRAuD0RG1/1.8.9%ED%8F%AC%EC%A7%80.7z.008?attach=1&knm=tfile.008" "1.8.9í¬ì§€.7z.008"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (9/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/rpHWN/btqGnHlivJ2/xv38YbR3cMZfofkMcbGpg1/1.8.9%ED%8F%AC%EC%A7%80.7z.009?attach=1&knm=tfile.009" "1.8.9í¬ì§€.7z.009"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (10/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/dA3xk4/btqGnrC2GnI/IDPbpdGweiOVUkkChdQHZK/1.8.9%ED%8F%AC%EC%A7%80.7z.010?attach=1&knm=tfile.010" "1.8.9í¬ì§€.7z.010"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (11/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/bKIB11/btqGkhhgR9I/lhmvSxJubiveYOacoBA510/1.8.9%ED%8F%AC%EC%A7%80.7z.011?attach=1&knm=tfile.011" "1.8.9í¬ì§€.7z.011"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (12/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/du0Ajy/btqGfNHONtt/aUwtWrLoD8Krzwn4VbTjrk/1.8.9%ED%8F%AC%EC%A7%80.7z.012?attach=1&knm=tfile.012" "1.8.9í¬ì§€.7z.012"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (13/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/brEknt/btqGfNHOKOi/IAO4WNkOQosImr9IRwYLZK/1.8.9%ED%8F%AC%EC%A7%80.7z.013?attach=1&knm=tfile.013" "1.8.9í¬ì§€.7z.013"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (14/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/deJaLX/btqGip0sxBT/LUbGC1OogwOx1tXR6TUOIK/1.8.9%ED%8F%AC%EC%A7%80.7z.014?attach=1&knm=tfile.014" "1.8.9í¬ì§€.7z.014"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (15/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/bCndXo/btqGiK5jiuu/xmFISA4sNBxsUZmreRUgU1/1.8.9%ED%8F%AC%EC%A7%80.7z.015?attach=1&knm=tfile.015" "1.8.9í¬ì§€.7z.015"
+  Nsisdl::download /TRANSLATE2 "í¬ì§€ ì„¤ì¹˜ì¤‘ (16/16)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/diRaLD/btqGnY1DKKS/zDUhbpOtbJ50iFekEtpGbk/1.8.9%ED%8F%AC%EC%A7%80.7z.016?attach=1&knm=tfile.016" "1.8.9í¬ì§€.7z.016"
+  nsexec::exec '$INSTDIR\7z.exe x "$instdir\1.8.9í¬ì§€.7z.001" "-aoa"'
   delete "7z.exe"
-  delete "1.8.9Æ÷Áö.7z.001"
-  delete "1.8.9Æ÷Áö.7z.002"
-  delete "1.8.9Æ÷Áö.7z.003"
-  delete "1.8.9Æ÷Áö.7z.004"
-  delete "1.8.9Æ÷Áö.7z.005"
-  delete "1.8.9Æ÷Áö.7z.006"
-  delete "1.8.9Æ÷Áö.7z.007"
-  delete "1.8.9Æ÷Áö.7z.008"
-  delete "1.8.9Æ÷Áö.7z.009"
-  delete "1.8.9Æ÷Áö.7z.010"
-  delete "1.8.9Æ÷Áö.7z.011"
-  delete "1.8.9Æ÷Áö.7z.012"
-  delete "1.8.9Æ÷Áö.7z.013"
-  delete "1.8.9Æ÷Áö.7z.014"
-  delete "1.8.9Æ÷Áö.7z.015"
-  delete "1.8.9Æ÷Áö.7z.016"
+  delete "1.8.9í¬ì§€.7z.001"
+  delete "1.8.9í¬ì§€.7z.002"
+  delete "1.8.9í¬ì§€.7z.003"
+  delete "1.8.9í¬ì§€.7z.004"
+  delete "1.8.9í¬ì§€.7z.005"
+  delete "1.8.9í¬ì§€.7z.006"
+  delete "1.8.9í¬ì§€.7z.007"
+  delete "1.8.9í¬ì§€.7z.008"
+  delete "1.8.9í¬ì§€.7z.009"
+  delete "1.8.9í¬ì§€.7z.010"
+  delete "1.8.9í¬ì§€.7z.011"
+  delete "1.8.9í¬ì§€.7z.012"
+  delete "1.8.9í¬ì§€.7z.013"
+  delete "1.8.9í¬ì§€.7z.014"
+  delete "1.8.9í¬ì§€.7z.015"
+  delete "1.8.9í¬ì§€.7z.016"
   goto keep3
 keep3:
   ;resource pack
   SetOutPath "$INSTDIR\resourcepacks"
   Nsisdl::download "https://blog.kakaocdn.net/dn/k74Yy/btqFIOze0RG/ckQOY9gpF5J4iMfcKJotH1/7z.exe?attach=1&knm=tfile.exe" "7z.exe"
-  Nsisdl::download /TRANSLATE2 "Ä¿½ºÅÒ ÆÑ ¼³Ä¡Áß (1/1)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/p73Mf/btqGgwshxdJ/j93ADKxdWCYAN71kZAUAU1/%26sect%3Bc%EB%82%98%EC%A3%A0%EC%95%88%EC%9D%98%20%EC%BB%A4%EC%8A%A4%ED%85%80%20%ED%8C%A9.7z?attach=1&knm=tfile.7z" "¡×c³ªÁÒ¾ÈÀÇ Ä¿½ºÅÒ ÆÑ.7z"
-  nsexec::exec '$INSTDIR\resourcepacks\7z.exe x "$instdir\resourcepacks\¡×c³ªÁÒ¾ÈÀÇ Ä¿½ºÅÒ ÆÑ.7z" "-aoa"'
-  delete "¡×c³ªÁÒ¾ÈÀÇ Ä¿½ºÅÒ ÆÑ.7z"
+  Nsisdl::download /TRANSLATE2 "ì»¤ìŠ¤í…€ íŒ© ì„¤ì¹˜ì¤‘ (1/1)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/p73Mf/btqGgwshxdJ/j93ADKxdWCYAN71kZAUAU1/%26sect%3Bc%EB%82%98%EC%A3%A0%EC%95%88%EC%9D%98%20%EC%BB%A4%EC%8A%A4%ED%85%80%20%ED%8C%A9.7z?attach=1&knm=tfile.7z" "Â§cë‚˜ì£ ì•ˆì˜ ì»¤ìŠ¤í…€ íŒ©.7z"
+  nsexec::exec '$INSTDIR\resourcepacks\7z.exe x "$instdir\resourcepacks\Â§cë‚˜ì£ ì•ˆì˜ ì»¤ìŠ¤í…€ íŒ©.7z" "-aoa"'
+  delete "Â§cë‚˜ì£ ì•ˆì˜ ì»¤ìŠ¤í…€ íŒ©.7z"
   delete "7z.exe"
   ;mod
   SetOutPath "$INSTDIR\mods"
   Nsisdl::download "https://blog.kakaocdn.net/dn/k74Yy/btqFIOze0RG/ckQOY9gpF5J4iMfcKJotH1/7z.exe?attach=1&knm=tfile.exe" "7z.exe"
-  Nsisdl::download /TRANSLATE2 "¸ğµå ¼³Ä¡Áß (1/1)" "¿¬°áÁßÀÔ´Ï´Ù.." "(1 ÃÊ ³²¾Ò½À´Ï´Ù...)" "(1 ºĞ ³²¾Ò½À´Ï´Ù...)" "(1 ½Ã°£ ³²¾Ò½À´Ï´Ù)" "(%u ÃÊ ³²¾Ò½À´Ï´Ù....)" "(%u ºĞ ³²¾Ò½À´Ï´Ù....)" "(%u ½Ã°£ ³²¾Ò½À´Ï´Ù)" "´Ù¿î·Îµå Áß " "https://blog.kakaocdn.net/dn/cirf6z/btqJWRx2TYJ/FLSvtKXmLDJKXKpQVgypT0/mods.7z?attach=1&knm=tfile.7z" "mods.7z"
+  Nsisdl::download /TRANSLATE2 "ëª¨ë“œ ì„¤ì¹˜ì¤‘ (1/1)" "ì—°ê²°ì¤‘ì…ë‹ˆë‹¤.." "(1 ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...)" "(1 ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "(%u ì´ˆ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤....)" "(%u ì‹œê°„ ë‚¨ì•˜ìŠµë‹ˆë‹¤)" "ë‹¤ìš´ë¡œë“œ ì¤‘ " "https://blog.kakaocdn.net/dn/cirf6z/btqJWRx2TYJ/FLSvtKXmLDJKXKpQVgypT0/mods.7z?attach=1&knm=tfile.7z" "mods.7z"
   nsexec::exec '$INSTDIR\mods\7z.exe x "$instdir\mods\mods.7z" "-aoa"'
   delete "7z.exe"
   delete "mods.7z"
@@ -302,7 +293,7 @@ keep3:
   push "$STARTMENU\Programs\NF Client.lnk"
   call ShellLinkSetRunAs
   pop $0
-  Messagebox MB_OK "¼³Ä¡°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù! ¹ÙÅÁÈ­¸é¿¡ ÀÖ´Â NF Client¸¦ ½ÇÇàÇØÁÖ¼¼¿ä!$\nÁ¦°ÅÇÏ½Ç ¶§´Â Á¦¾îÆÇ -> ÇÁ·Î±×·¥ Á¦°Å -> NF Client ${PRODUCT_VERSION}"
+  Messagebox MB_OK "ì„¤ì¹˜ê°€ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤! ë°”íƒ•í™”ë©´ì— ìˆëŠ” NF Clientë¥¼ ì‹¤í–‰í•´ì£¼ì„¸ìš”!$\nì œê±°í•˜ì‹¤ ë•ŒëŠ” ì œì–´íŒ -> í”„ë¡œê·¸ë¨ ì œê±° -> NF Client ${PRODUCT_VERSION}"
   goto END
   
 END:
@@ -322,15 +313,15 @@ SectionEnd
 
 Function un.onUninstSuccess
   HideWindow
-  MessageBox MB_ICONINFORMATION|MB_OK "$(^Name)´Â(Àº) ¿ÏÀüÈ÷ Á¦°ÅµÇ¾ú½À´Ï´Ù."
+  MessageBox MB_ICONINFORMATION|MB_OK "$(^Name)ëŠ”(ì€) ì™„ì „íˆ ì œê±°ë˜ì—ˆìŠµë‹ˆë‹¤."
 FunctionEnd
 
 Function un.onInit
-  MessageBox MB_ICONQUESTION|MB_YESNO|MB_DEFBUTTON2 "$(^Name)À»(¸¦) Á¦°ÅÇÏ½Ã°Ú½À´Ï±î?" IDYES +2
+  MessageBox MB_ICONQUESTION|MB_YESNO|MB_DEFBUTTON2 "$(^Name)ì„(ë¥¼) ì œê±°í•˜ì‹œê² ìŠµë‹ˆê¹Œ?" IDYES +2
   Abort
 FunctionEnd
 
-Section "un.¾ğÀÎ½ºÅç"
+Section "un.ì–¸ì¸ìŠ¤í†¨"
   delete "$DESKTOP\NF Client.lnk"
   delete "$STARTMENU\Programs\NF Client.lnk"
   delete "$PROGRAMFILES\Minecraft Launcher\nfclient.ico"
