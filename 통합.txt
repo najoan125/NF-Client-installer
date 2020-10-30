@@ -1,0 +1,44 @@
+NF Client를 이용해 주셔서 감사합니다. 
+아래 동의해야 하는 내용은 꼭! 읽어주시기 바랍니다.
+
+────────동의해야 하는 내용───────
+1.본 설치기를 재배포 해도 법적으로 상관 없지만, 본인이 수정하여 업로드하는 행위는 하지 말아주세요.
+
+2.본 설치기는 예고없이 삭제되거나 변경될 수 있습니다.
+
+3.본 설치기의 파일 링크는 예고없이 삭제되거나 변경될 수 있습니다.
+
+4.본 설치기 이용시, NF Client 에 수동으로 설치한 모드는 전부 삭제됩니다.
+
+5.본 설치기는 언제든지 업데이트가 될 수 있습니다. 
+  아래 사이트에서 새로운 버전이 나왔는지 확인해주세요.
+  (이 설치기 버전은 2020.9 입니다)
+  설치기 다운로드 주소: https://www.hift.kro.kr/download
+────────────────────────
+
+───────패치 노트 및 변경사항───────
+2020: 나죠안의 통합 설치기 탄생!
+2020.1: 모드 초기화 기능 추가!
+2020.2: 포지 설치 방식 변경, 키 매크로 모드 추가(K키로 이용 가능), in game account changer 모드 추가, 리소스팩 업데이트
+2020.3: 포지 설치 방식 2차 변경, AutoGG 업데이트, 마우스 딜레이 패치 모드 추가 
+2020.4: UI 변경, 모드 한글화
+2020.5: 매크로 키 바인드 모드 삭제, Auto text 모드 추가
+2020.6: 나죠안의 커스텀 팩 대폭 업데이트, autogg 한글화, quickplay 한글화, autotext 한글화, 텔레포트 딜레이 감소
+2020.7: 기존 모드팩 형태에서 자체 런처로 변경, 즉, 마인크래프트 런처와 NF Client가 독립됨(동시 실행은 불가)
+2020.8: nf client 런처 실행한됨 오류 수정, NF Client 로딩 화면 수정, 리소스팩 한글 업데이트
+2020.9: nf client 가 이미 있을 경우 설정파일을 유지할 수 있도록 변경, 나죠안의 권장설정 업데이트, Patcher 모드를 추가하여 성능 향상됨, 테두리 없는 창모드 해제시 창모드가 너무 커지는 버그 수정
+2020.10: 특정 컴퓨터에서 NF Client 런처가 실행되지 않는 버그를 수정, 2020.7 미만의 버전의 config를 유지하지 못하는 버그를 수정
+2020.11: NF Client의 모드 설정을 보다 쉽게 할 수 있도록 GUI 를 추가(게임 내에서 설정 -> 조작 에서 NF Client의 키 설정을 바꾸는걸 권장) NF Client 설치시 설정 파일 유지하고, 옵티파인 설정만 유지하지 않는 기능 추가, Quickplay 한글 수정
+────────────────────────
+
+─────── 출처 ───────
+한글채팅: https://blog.naver.com/won983212/220627516900
+Block Overlay Mod: http://www.9minecraft.net/block-overlay-mod/
+customdiscordrpc: https://www.curseforge.com/minecraft/mc-mods/custom-discordrpc
+InGameAccountSwitcher: https://www.curseforge.com/minecraft/mc-mods/in-game-account-switcher
+Optifine: https://optifine.net/home
+Orange's Simple Mods: https://www.curseforge.com/minecraft/mc-mods/oranges-simplemods-collection
+Orange's 1.7 animations: https://www.curseforge.com/minecraft/mc-mods/old-animations-mod
+Quickplay: https://bugg.co/quickplay/
+기타(sk1er): https://sk1er.club
+────────────────────────
