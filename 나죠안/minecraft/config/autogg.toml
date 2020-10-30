@@ -1,0 +1,16 @@
+
+[general]
+
+	[general.general]
+		autogg = true
+		delay = 0
+		phrase = 0
+
+	[general.miscellaneous]
+		antigg = false
+
+	[general.secondary_message]
+		second_message_delay = 1000
+		phrase = 1
+		second_message = false
+

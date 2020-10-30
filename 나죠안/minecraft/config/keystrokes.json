@@ -1,0 +1,21 @@
+{
+  "x": 0,
+  "y": 0,
+  "leftClick": true,
+  "red": 255,
+  "green": 255,
+  "blue": 255,
+  "pressedRed": 0,
+  "pressedGreen": 0,
+  "pressedBlue": 0,
+  "scale": 0.9621212482452393,
+  "fadeTime": 1.0,
+  "enabled": true,
+  "chroma": true,
+  "mouseButtons": true,
+  "showCPS": true,
+  "showCPSOnButtons": true,
+  "showSpacebar": true,
+  "showSneak": true,
+  "custom": []
+}
