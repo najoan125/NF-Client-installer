@@ -1,0 +1,38 @@
+# Custom Crosshair Mod v1.1.0-forge
+# Made by Sparkless101
+# ------------------------------------
+# https://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/2637819/
+# https://www.curseforge.com/projects/242995/
+# ------------------------------------
+# This config file contains the properties of the crosshair and mod properties. Feel free to edit them.
+# ------------------------------------
+dot_enabled:false
+highlight_passive_enabled:true
+crosshair_height:4
+visible_default:true
+outline_enabled:true
+crosshair_style:5
+dot_colour:255/255/255/255
+mod_enabled:true
+rainbow_enabled:false
+crosshair_width:4
+highlight_hostile_enabled:true
+dynamic_bow_enabled:true
+crosshair_thickness:3
+highlight_players_colour:60/60/255/255
+itemcooldown_enabled:true
+crosshair_rotation:0
+highlight_hostile_colour:220/40/40/255
+visible_debug:true
+visible_spectator:true
+visible_hiddengui:true
+crosshair_gap:4
+outline_colour:32/32/32/255
+rainbow_speed:500
+dynamic_attackindicator_enabled:true
+highlight_passive_colour:40/230/40/255
+keybind_screen_editcrosshair:c
+crosshair_colour:255/255/255/255
+itemcooldown_colour:255/255/255/80
+highlight_players_enabled:true
+visible_thirdperson:false

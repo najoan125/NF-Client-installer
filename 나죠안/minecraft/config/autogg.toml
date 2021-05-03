@@ -14,3 +14,23 @@
 		phrase = 1
 		second_message = false
 
+["일반"]
+
+	["일반"."일반"]
+		autogg = true
+		phrase = 0
+		"지연" = 0
+
+["두_번째_메시지"]
+
+	["두_번째_메시지"."두_번째_메시지"]
+		"두_번째_메시지" = false
+		phrase = 0
+		"두_번째_메시지_지연" = 0
+
+["기타"]
+
+	["기타"."기타"]
+		"안티_카르마" = false
+		antigg = false
+

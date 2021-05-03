@@ -2,25 +2,25 @@
 [general]
 
 	[general.general]
-		modcore_button_links = true
+		modcore_button_links = false
 
 	[general.online_status]
-		show_tab_online_indicator = true
+		show_tab_online_indicator = false
 
 [keybinds]
 
 	[keybinds.keybinds]
-		"rotate_(toggle)" = true
-		add_friend = true
-		"rotate_(hold)" = true
-		open_friends_gui = true
-		"flip_(hold)" = true
-		"flip_(toggle)" = true
+		"rotate_(toggle)" = false
+		add_friend = false
+		"rotate_(hold)" = false
+		open_friends_gui = false
+		"flip_(hold)" = false
+		"flip_(toggle)" = false
 
 [privacy]
 
 	[privacy.general]
-		send_current_server = true
+		send_current_server = false
 
 [notifications]
 
@@ -28,15 +28,15 @@
 		master_notifications_toggle = false
 
 	[notifications.messages]
-		message_received_notifications = true
-		message_group_update = true
-		message_sound = true
+		message_received_notifications = false
+		message_group_update = false
+		message_sound = false
 
 	[notifications.updates]
 		mod_update_notification = false
 
 	[notifications.friends]
-		friend_notifications = true
+		friend_notifications = false
 
 [cosmetics]
 
@@ -44,21 +44,21 @@
 		capes_cache_strategy = 1
 
 	[cosmetics.show_cosmetics]
-		top_hat = true
-		colonist_hat = true
+		top_hat = false
+		colonist_hat = false
 		dragon_head = true
-		general_backpack = true
-		lego_maestro_cape = true
+		general_backpack = false
+		lego_maestro_cape = false
 		fez_hat = true
-		dog_backpack = true
-		elephant_backpack = true
-		tab_dot = true
-		dog_filter = true
-		custom_cape_gif = true
-		jetpack = true
-		custom_cape_image = true
-		airpods = true
-		lego_hat = true
-		nitro_cape = true
+		dog_backpack = false
+		elephant_backpack = false
+		tab_dot = false
+		dog_filter = false
+		custom_cape_gif = false
+		jetpack = false
+		custom_cape_image = false
+		airpods = false
+		lego_hat = false
+		nitro_cape = false
 		dragon_wings = true
 

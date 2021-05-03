@@ -1,0 +1,7 @@
+{
+  "data" : {
+    "UiEvents" : "{\"hasSeenDialog\":{\"LAUNCHER_RELEASENOTE_61rnrT5t7g0hS7YlV6O9CD\":true},\"hidePlayerSafetyDisclaimer\":{\"1.8.9-forge1.8.9-11.15.1.2318-1.8.9_forge\":true,\"1.12.2_2a197516e9429ed7de8023810bb4c315\":true,\"1.12.2-forge1.12.2-14.23.5.2847_2a197516e9429ed7de8023810bb4c315\":true}}",
+    "UiSettings" : "{\"dungeonsDLCFilter\":{\"Owned\":true,\"Bundle\":true,\"DLC\":true},\"javaConfigurationFilter\":{\"release\":false,\"historical\":false,\"snapshot\":false,\"sortBy\":\"last-played\",\"modded\":true},\"lastVisitedGame\":\"java\"}"
+  },
+  "formatVersion" : 1
+}
