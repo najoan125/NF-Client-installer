@@ -1,5 +1,5 @@
-# NF-Client-Installer-dev_build
-NF Client 개발버전 설치기의 오픈소스입니다.
+# NF-Client-Installer
+NF Client 정식버전 설치기의 오픈소스입니다.
 [NF Client 공식 사이트][nfclient]
 
 [nfclient]: https://www.nfclient.kro.kr "NF Client"
