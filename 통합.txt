@@ -12,7 +12,7 @@ NF Client를 이용해 주셔서 감사합니다.
 
 5.본 설치기는 언제든지 업데이트가 될 수 있습니다. 
   아래 사이트에서 새로운 버전이 나왔는지 확인해주세요.
-  (이 설치기 버전은 2021.1 입니다)
+  (이 설치기 버전은 2021.2 입니다)
   설치기 다운로드 주소: https://www.nfclient.kro.kr/download
   
 6.이 클라이언트는 모든 컴퓨터에서 안정적으로 작동하지 않으며, 몇몇 컴퓨터에서 에러가 발생할 수 있습니다.
@@ -22,7 +22,7 @@ NF Client를 이용해 주셔서 감사합니다.
 ────────────────────────
 
 ───────변경사항───────
-2021.1: Zoom 부드럽게 변경, 스크린샷 촬영시 미리보기가 3초동안 보이고 바로 복사되게 변경, AutoGG 어색한 한글화 수정, Levelhead 업데이트, 메인메뉴에서 바로 Hypixel로 접속 가능하게 변경, Replay모드 추가, 인벤토리 창 투명하게 변경, Betterfps 알고리즘 업데이트(fps 증가), 설정파일 유지 시, 새로 추가된 설정 파일이 설치가 안되는 문제 수정, custom crosshair 모드 추가, Hypixel 인게임 일간보상 기능 추가, reachDisplay 한글화, 맞춤 십자선 한글화, discord RPC 대폭 업데이트 및 버그 수정(Hypixel), 마인크래프트 런처 자동설치(마인크래프트 런처를 따로 설치할 필요가 없음), 옵티파인 설정 업데이트, NF Client GUI에서 Simplemod 세부설정 가능하게 변경, 특정 문자(ㅏ,ㅑ,ㅣ)가 입력되지 않는 버그 수정, 옵티파인 설정 업데이트, 구성요소(Hypixel 레거시 리소스팩)를 선택할 수 있도록 변경, 메인 메뉴에서 맞춤 모드를 추가할 수 있게 변경, 설치기 알고리즘 버그 수정, Direction HUD 업데이트
+2021.2: Perspective(자유시점)모드 추가, You are currently connected to server dynamiclobby42F 와 같은 메시지가 도배되는 버그 수정
 
 모든 변경사항: https://pastebin.com/UhkZmm65
 ────────────────────────
@@ -44,5 +44,6 @@ Discord RPC(Hypixel): https://hypixel.net/threads/forge-1-8-9-discordrp-rich-pre
 FORTNITE COMPASS: https://youtu.be/Anwxqk2EAlE
 Reward Claim: https://hypixel.net/threads/forge-1-8-9-rewardclaim-claim-your-daily-rewards-ingame.2716161/
 Smooth Font: https://www.curseforge.com/minecraft/mc-mods/smooth-font
+Perspective: https://www.curseforge.com/minecraft/mc-mods/perspective-mod-redux
 기타(sk1er): https://sk1er.club
 ────────────────────────
