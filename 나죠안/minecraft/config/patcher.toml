@@ -183,7 +183,7 @@
 [screens]
 
 	[screens.general]
-		container_backgrounds = true
+		container_backgrounds = false
 		gui_crosshair = false
 		clean_main_menu = true
 		skin_refresher = false

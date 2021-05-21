@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "NF Client"
-!define PRODUCT_VERSION "2021.4"
+!define PRODUCT_VERSION "2021.5"
 !define PRODUCT_PUBLISHER "NF Client"
 !define PRODUCT_WEB_SITE "https://www.nfclient.kro.kr"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
@@ -186,6 +186,7 @@ X:
   delete "1.8.9포지.7z.016"
   goto notkeep
 notkeep:
+  ;config1
   SetOverwrite on
   SetOutPath "$INSTDIR"
   File "나죠안\minecraft\launcher_profiles.json"
@@ -208,6 +209,7 @@ notkeep:
   File "나죠안\minecraft\config\blockOverlay.cfg"
   File "나죠안\minecraft\config\replaymod.cfg"
   File "나죠안\minecraft\config\fncompassmod.cfg"
+  File "나죠안\minecraft\config\blur.cfg"
   SetOutPath "$INSTDIR\modcore"
   File "나죠안\minecraft\modcore\config.toml"
   SetOutPath "$INSTDIR\quickplay"
@@ -221,6 +223,7 @@ notkeep:
   File "나죠안\minecraft\ReachDisplayMod\values.cfg"
   goto keep3
 notkeep2:
+  ;config2
   SetOverwrite on
   SetOutPath "$INSTDIR"
   File "나죠안\minecraft\launcher_profiles.json"
@@ -243,6 +246,7 @@ notkeep2:
   File "나죠안\minecraft\config\blockOverlay.cfg"
   File "나죠안\minecraft\config\replaymod.cfg"
   File "나죠안\minecraft\config\fncompassmod.cfg"
+  File "나죠안\minecraft\config\blur.cfg"
   SetOutPath "$INSTDIR\modcore"
   File "나죠안\minecraft\modcore\config.toml"
   SetOutPath "$INSTDIR\quickplay"
@@ -279,6 +283,7 @@ of:
   File "나죠안\minecraft\optionsof.txt"
   goto keep2
 keep:
+  ;config3
   SetOverwrite off
   SetOutPath "$INSTDIR"
   File "나죠안\minecraft\launcher_profiles.json"
@@ -301,6 +306,7 @@ keep:
   File "나죠안\minecraft\config\blockOverlay.cfg"
   File "나죠안\minecraft\config\replaymod.cfg"
   File "나죠안\minecraft\config\fncompassmod.cfg"
+  File "나죠안\minecraft\config\blur.cfg"
   SetOutPath "$INSTDIR\modcore"
   File "나죠안\minecraft\modcore\config.toml"
   SetOutPath "$INSTDIR\quickplay"
@@ -370,7 +376,7 @@ keep3:
   SetOutPath "$INSTDIR\mods\1.8.9"
   File "mod.bat"
   Nsisdl::download "https://blog.kakaocdn.net/dn/k74Yy/btqFIOze0RG/ckQOY9gpF5J4iMfcKJotH1/7z.exe?attach=1&knm=tfile.exe" "7z.exe"
-  Nsisdl::download /TRANSLATE2 "모드 설치중 (1/1)" "연결중입니다.." "(1 초 남았습니다...)" "(1 분 남았습니다...)" "(1 시간 남았습니다)" "(%u 초 남았습니다....)" "(%u 분 남았습니다....)" "(%u 시간 남았습니다)" "다운로드 중 " "http://132.226.170.151/file/1.5.4.7z" "mods.7z"
+  Nsisdl::download /TRANSLATE2 "모드 설치중 (1/1)" "연결중입니다.." "(1 초 남았습니다...)" "(1 분 남았습니다...)" "(1 시간 남았습니다)" "(%u 초 남았습니다....)" "(%u 분 남았습니다....)" "(%u 시간 남았습니다)" "다운로드 중 " "http://132.226.170.151/file/1.6.7z" "mods.7z"
   nsexec::exec '$INSTDIR\mods\1.8.9\7z.exe x "$instdir\mods\1.8.9\mods.7z" "-aoa"'
   ExecWait '"mod.bat"'
   delete "7z.exe"
