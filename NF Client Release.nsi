@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "NF Client"
-!define PRODUCT_VERSION "2021.62"
+!define PRODUCT_VERSION "2021.63"
 !define PRODUCT_PUBLISHER "NF Client"
 !define PRODUCT_WEB_SITE "https://www.nfclient.kro.kr"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
@@ -75,7 +75,7 @@ OutFile "NF Client Setup.exe"
 RequestExecutionLevel admin
 InstallDir "$APPDATA\.nfclient"
 ShowInstDetails hide
-
+/*
 Function ShellLinkSetRunAs
 System::Store S
 pop $9
@@ -104,14 +104,25 @@ ${EndIf}
 push $0
 System::Store L
 FunctionEnd
-
+*/
 Section "MainSection" SEC01
   SetOverwrite on
   AddSize 1000000
-  Messagebox MB_OKCANCEL "경고: NF Client에 따로 설치한 모드, 애드온은 삭제됩니다.$\n$\n설치를 취소하시려면 취소를 누르세요" IDCANCEL END
+  Messagebox MB_OKCANCEL "경고: NF Client에 따로 설치한 모드는 삭제됩니다.$\n$\n설치를 취소하시려면 취소를 누르세요" IDCANCEL END
   CreateDirectory "$APPDATA\.nfclient"
   ;delete "$INSTDIR\mods\*.*"
+  iffileexists "$INSTDIR\mods\1.12.2\ScreenshotToClipboard-1.12.2-1.0.1.jar" addon nonaddon
+addon:
+  RMDir /r "$INSTDIR\mods\1.8.9"
+  SetOutPath "$INSTDIR"
+  File "나죠안\minecraft\1.12.2\launcher_profiles.json"
+  goto main
+nonaddon:
   RMDir /r "$INSTDIR\mods"
+  SetOutPath "$INSTDIR"
+  File "나죠안\minecraft\1.8.9\launcher_profiles.json"
+  goto main
+main:
   ;hack
   ;SetOutPath "$INSTDIR\versions"
   ;Nsisdl::download "https://blog.kakaocdn.net/dn/k74Yy/btqFIOze0RG/ckQOY9gpF5J4iMfcKJotH1/7z.exe?attach=1&knm=tfile.exe" "7z.exe"
@@ -128,10 +139,9 @@ Section "MainSection" SEC01
   ;patcher
   SetOutPath "$INSTDIR\config"
   File "나죠안\minecraft\config\patcher.toml"
-  File "나죠안\minecraft\config\bettertab.toml"
   ;launcher profiles
   SetOutPath "$INSTDIR"
-  File "나죠안\minecraft\launcher_profiles.json"
+  ;File "나죠안\minecraft\launcher_profiles.json"
   File "나죠안\minecraft\launcher_ui_state.json"
   ;config
   File "나죠안\minecraft\betterfps.txt"
@@ -189,7 +199,7 @@ notkeep:
   ;config1
   SetOverwrite on
   SetOutPath "$INSTDIR"
-  File "나죠안\minecraft\launcher_profiles.json"
+  ;File "나죠안\minecraft\launcher_profiles.json"
   File "나죠안\minecraft\options.txt"
   File "나죠안\minecraft\optionsof.txt"
   File "나죠안\minecraft\crosshair_config.ccmcfg"
@@ -209,7 +219,7 @@ notkeep:
   File "나죠안\minecraft\config\blockOverlay.cfg"
   File "나죠안\minecraft\config\replaymod.cfg"
   File "나죠안\minecraft\config\fncompassmod.cfg"
-  File "나죠안\minecraft\config\blur.cfg"
+  ;File "나죠안\minecraft\config\blur.cfg"
   SetOutPath "$INSTDIR\modcore"
   File "나죠안\minecraft\modcore\config.toml"
   SetOutPath "$INSTDIR\quickplay"
@@ -226,7 +236,7 @@ notkeep2:
   ;config2
   SetOverwrite on
   SetOutPath "$INSTDIR"
-  File "나죠안\minecraft\launcher_profiles.json"
+  ;File "나죠안\minecraft\launcher_profiles.json"
   File "나죠안\minecraft\options.txt"
   File "나죠안\minecraft\optionsof.txt"
   File "나죠안\minecraft\crosshair_config.ccmcfg"
@@ -246,7 +256,7 @@ notkeep2:
   File "나죠안\minecraft\config\blockOverlay.cfg"
   File "나죠안\minecraft\config\replaymod.cfg"
   File "나죠안\minecraft\config\fncompassmod.cfg"
-  File "나죠안\minecraft\config\blur.cfg"
+  ;File "나죠안\minecraft\config\blur.cfg"
   SetOutPath "$INSTDIR\modcore"
   File "나죠안\minecraft\modcore\config.toml"
   SetOutPath "$INSTDIR\quickplay"
@@ -262,7 +272,7 @@ notkeep2:
 O:
   SetOutPath "$INSTDIR"
   Messagebox MB_YESNO "NF Client 2020.7 미만의 버전이 설치되어있습니다. $\n 설정파일을 유지하시겠습니까?" IDNO notkeep2
-  File "나죠안\minecraft\launcher_profiles.json"
+  ;File "나죠안\minecraft\launcher_profiles.json"
   CopyFiles "$APPDATA\.minecraft\options.txt" "$INSTDIR\options.txt"
   CopyFiles "$APPDATA\.minecraft\optionsof.txt" "$INSTDIR\optionsof.txt"
   CopyFiles "$APPDATA\.minecraft\config\animations.cfg" "$INSTDIR\config\animations.cfg"
@@ -286,7 +296,7 @@ keep:
   ;config3
   SetOverwrite off
   SetOutPath "$INSTDIR"
-  File "나죠안\minecraft\launcher_profiles.json"
+  ;File "나죠안\minecraft\launcher_profiles.json"
   File "나죠안\minecraft\options.txt"
   File "나죠안\minecraft\optionsof.txt"
   File "나죠안\minecraft\crosshair_config.ccmcfg"
@@ -306,7 +316,7 @@ keep:
   File "나죠안\minecraft\config\blockOverlay.cfg"
   File "나죠안\minecraft\config\replaymod.cfg"
   File "나죠안\minecraft\config\fncompassmod.cfg"
-  File "나죠안\minecraft\config\blur.cfg"
+  ;File "나죠안\minecraft\config\blur.cfg"
   SetOutPath "$INSTDIR\modcore"
   File "나죠안\minecraft\modcore\config.toml"
   SetOutPath "$INSTDIR\quickplay"
@@ -373,7 +383,7 @@ keep3:
   SetOutPath "$INSTDIR\mods\1.8.9"
   File "mod.bat"
   Nsisdl::download "https://blog.kakaocdn.net/dn/k74Yy/btqFIOze0RG/ckQOY9gpF5J4iMfcKJotH1/7z.exe?attach=1&knm=tfile.exe" "7z.exe"
-  Nsisdl::download /TRANSLATE2 "모드 설치중 (1/1)" "연결중입니다.." "(1 초 남았습니다...)" "(1 분 남았습니다...)" "(1 시간 남았습니다)" "(%u 초 남았습니다....)" "(%u 분 남았습니다....)" "(%u 시간 남았습니다)" "다운로드 중 " "http://132.226.170.151/file/1.7.1.7z" "mods.7z"
+  Nsisdl::download /TRANSLATE2 "모드 설치중 (1/1)" "연결중입니다.." "(1 초 남았습니다...)" "(1 분 남았습니다...)" "(1 시간 남았습니다)" "(%u 초 남았습니다....)" "(%u 분 남았습니다....)" "(%u 시간 남았습니다)" "다운로드 중 " "http://132.226.170.151/file/1.7.2.7z" "mods.7z"
   nsexec::exec '$INSTDIR\mods\1.8.9\7z.exe x "$instdir\mods\1.8.9\mods.7z" "-aoa"'
   ExecWait '"mod.bat"'
   delete "7z.exe"
@@ -381,8 +391,8 @@ keep3:
   delete "mod.bat"
   SetOutPath "$INSTDIR\modcore"
   Nsisdl::download "https://blog.kakaocdn.net/dn/k74Yy/btqFIOze0RG/ckQOY9gpF5J4iMfcKJotH1/7z.exe?attach=1&knm=tfile.exe" "7z.exe"
-  Nsisdl::download "https://blog.kakaocdn.net/dn/brkMRI/btqV19Hfr80/7g1e1g6qNgzJ6RWrsbJQp0/beta.7z.001?attach=1&knm=tfile.001" "beta.7z.001"
-  Nsisdl::download "https://blog.kakaocdn.net/dn/1dy9W/btqV0Fmo00f/3IYwHz3GXNFIk8htyyp0cK/beta.7z.002?attach=1&knm=tfile.002" "beta.7z.002"
+  Nsisdl::download /TRANSLATE2 "모드 핵심 파일 설치 중 (1/2)" "연결중입니다.." "(1 초 남았습니다...)" "(1 분 남았습니다...)" "(1 시간 남았습니다)" "(%u 초 남았습니다....)" "(%u 분 남았습니다....)" "(%u 시간 남았습니다)" "다운로드 중 " "https://blog.kakaocdn.net/dn/brkMRI/btqV19Hfr80/7g1e1g6qNgzJ6RWrsbJQp0/beta.7z.001?attach=1&knm=tfile.001" "beta.7z.001"
+  Nsisdl::download /TRANSLATE2 "모드 핵심 파일 설치 중 (2/2)" "연결중입니다.." "(1 초 남았습니다...)" "(1 분 남았습니다...)" "(1 시간 남았습니다)" "(%u 초 남았습니다....)" "(%u 분 남았습니다....)" "(%u 시간 남았습니다)" "다운로드 중 " "https://blog.kakaocdn.net/dn/1dy9W/btqV0Fmo00f/3IYwHz3GXNFIk8htyyp0cK/beta.7z.002?attach=1&knm=tfile.002" "beta.7z.002"
   nsexec::exec '$INSTDIR\modcore\7z.exe x "$instdir\modcore\beta.7z.001" "-aoa"'
   delete "7z.exe"
   delete "beta.7z.001"
@@ -390,16 +400,16 @@ keep3:
   SetOutPath "$PROGRAMFILES\Minecraft Launcher\"
   File "nfclient.ico"
   SetOverwrite off
-  Nsisdl::download "https://blog.kakaocdn.net/dn/buRRdi/btq09jZtZc4/sRT9b5pjQ7Is2RN6H4SOMK/MinecraftLauncher.exe?attach=1&knm=tfile.exe" "MinecraftLauncher.exe"
+  Nsisdl::download /TRANSLATE2 "마인크래프트 런처 설치 중 (1/1)" "연결중입니다.." "(1 초 남았습니다...)" "(1 분 남았습니다...)" "(1 시간 남았습니다)" "(%u 초 남았습니다....)" "(%u 분 남았습니다....)" "(%u 시간 남았습니다)" "다운로드 중 " "https://blog.kakaocdn.net/dn/buRRdi/btq09jZtZc4/sRT9b5pjQ7Is2RN6H4SOMK/MinecraftLauncher.exe?attach=1&knm=tfile.exe" "MinecraftLauncher.exe"
   SetOverwrite on
   CreateShortCut "$DESKTOP\NF Client.lnk" "$PROGRAMFILES\Minecraft Launcher\MinecraftLauncher.exe" '--workDir "%appdata%\.nfclient"' "$PROGRAMFILES\Minecraft Launcher\nfclient.ico"
   CreateShortCut "$STARTMENU\Programs\NF Client.lnk" "$PROGRAMFILES\Minecraft Launcher\MinecraftLauncher.exe" '--workDir "%appdata%\.nfclient"' "$PROGRAMFILES\Minecraft Launcher\nfclient.ico"
   push "$DESKTOP\NF Client.lnk"
-  call ShellLinkSetRunAs
-  pop $0
+  ;call ShellLinkSetRunAs
+  ;pop $0
   push "$STARTMENU\Programs\NF Client.lnk"
-  call ShellLinkSetRunAs
-  pop $0
+  ;call ShellLinkSetRunAs
+  ;pop $0
   Messagebox MB_OK "설치가 완료되었습니다! 바탕화면에 있는 NF Client를 실행해주세요!$\n제거하실 때는 제어판 -> 프로그램 제거 -> NF Client ${PRODUCT_VERSION}"
   goto END
   
@@ -415,7 +425,7 @@ CheckA1:
   SetOutPath "$INSTDIR\resourcepacks"
   SetOverwrite on
   Nsisdl::download "https://blog.kakaocdn.net/dn/k74Yy/btqFIOze0RG/ckQOY9gpF5J4iMfcKJotH1/7z.exe?attach=1&knm=tfile.exe" "7z.exe"
-  Nsisdl::download "https://blog.kakaocdn.net/dn/bAvYWH/btq2MjER6yr/Jf2nEKLQaKnRNhgn84Be5K/resourcepacks.7z?attach=1&knm=tfile.7z" "resourcepacks.7z"
+  Nsisdl::download /TRANSLATE2 "하이픽셀 레거시 리소스팩 설치 중 (1/1)" "연결중입니다.." "(1 초 남았습니다...)" "(1 분 남았습니다...)" "(1 시간 남았습니다)" "(%u 초 남았습니다....)" "(%u 분 남았습니다....)" "(%u 시간 남았습니다)" "다운로드 중 " "https://blog.kakaocdn.net/dn/bAvYWH/btq2MjER6yr/Jf2nEKLQaKnRNhgn84Be5K/resourcepacks.7z?attach=1&knm=tfile.7z" "resourcepacks.7z"
   nsexec::exec '$INSTDIR\resourcepacks\7z.exe x "$instdir\resourcepacks\resourcepacks.7z" "-aoa"'
   delete "7z.exe"
   delete "resourcepacks.7z"

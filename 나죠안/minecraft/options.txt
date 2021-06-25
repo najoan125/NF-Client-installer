@@ -26,7 +26,7 @@ chatOpacity:1.0
 snooperEnabled:false
 fullscreen:true
 enableVsync:false
-useVbo:true
+useVbo:false
 hideServerAddress:false
 advancedItemTooltips:true
 pauseOnLostFocus:true
