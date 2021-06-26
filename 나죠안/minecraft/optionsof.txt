@@ -8,7 +8,7 @@ ofAoLevel:0.0
 ofClouds:3
 ofCloudsHeight:0.0
 ofTrees:1
-ofDroppedItems:0
+ofDroppedItems:1
 ofRain:3
 ofAnimatedWater:2
 ofAnimatedLava:2
@@ -31,12 +31,12 @@ ofLagometer:false
 ofShowFps:false
 ofAutoSaveTicks:28800
 ofBetterGrass:3
-ofConnectedTextures:1
+ofConnectedTextures:2
 ofWeather:false
 ofSky:true
 ofStars:true
 ofSunMoon:true
-ofVignette:0
+ofVignette:1
 ofChunkUpdates:1
 ofChunkUpdatesDynamic:true
 ofTime:0
@@ -57,7 +57,7 @@ ofNaturalTextures:true
 ofEmissiveTextures:true
 ofLazyChunkLoading:false
 ofRenderRegions:true
-ofSmartAnimations:false
+ofSmartAnimations:true
 ofDynamicFov:true
 ofAlternateBlocks:true
 ofDynamicLights:3
