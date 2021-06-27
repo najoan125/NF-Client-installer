@@ -1,10 +1,11 @@
 {
   "homepage": "https://github.com/najoan125/NF-Client-installer/releases/latest",
   "1.8.9": {
+    "2021.65": "더미코드 제거, 최적화",
     "2021.64": "업데이트 확인 기능 추가"
   },
   "promos": {
-    "1.8.9-latest": "2021.64",
-    "1.8.9-recommended": "2021.64"
+    "1.8.9-latest": "2021.65",
+    "1.8.9-recommended": "2021.65"
   }
 }
