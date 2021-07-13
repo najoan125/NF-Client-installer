@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "NF Client"
-!define PRODUCT_VERSION "2021.7"
+!define PRODUCT_VERSION "2021.71"
 !define PRODUCT_PUBLISHER "NF Client"
 !define PRODUCT_WEB_SITE "https://www.nfclient.kro.kr"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
@@ -401,10 +401,13 @@ keep3:
   SetOutPath "$PROGRAMFILES\Minecraft Launcher\"
   File "nfclient.ico"
   SetOverwrite off
+  iffileexists "$PROGRAMFILES\Minecraft Launcher\MinecraftLauncher.exe" launcher nonlauncher
+nonlauncher:
   Nsisdl::download /TRANSLATE2 "마인크래프트 런처 설치 중 (1/1)" "연결중입니다.." "(1 초 남았습니다...)" "(1 분 남았습니다...)" "(1 시간 남았습니다)" "(%u 초 남았습니다....)" "(%u 분 남았습니다....)" "(%u 시간 남았습니다)" "다운로드 중 " "https://blog.kakaocdn.net/dn/buRRdi/btq09jZtZc4/sRT9b5pjQ7Is2RN6H4SOMK/MinecraftLauncher.exe?attach=1&knm=tfile.exe" "MinecraftLauncher.exe"
+launcher:
   SetOverwrite on
-  CreateShortCut "$DESKTOP\NF Client.lnk" "$PROGRAMFILES\Minecraft Launcher\MinecraftLauncher.exe" '--workDir "%appdata%\.nfclient"' "$PROGRAMFILES\Minecraft Launcher\nfclient.ico"
-  CreateShortCut "$STARTMENU\Programs\NF Client.lnk" "$PROGRAMFILES\Minecraft Launcher\MinecraftLauncher.exe" '--workDir "%appdata%\.nfclient"' "$PROGRAMFILES\Minecraft Launcher\nfclient.ico"
+  CreateShortCut "$DESKTOP\NF Client.lnk" "$PROGRAMFILES\Minecraft Launcher\MinecraftLauncher.exe" '--workDir "$INSTDIR"' "$PROGRAMFILES\Minecraft Launcher\nfclient.ico"
+  CreateShortCut "$STARTMENU\Programs\NF Client.lnk" "$PROGRAMFILES\Minecraft Launcher\MinecraftLauncher.exe" '--workDir "$INSTDIR"' "$PROGRAMFILES\Minecraft Launcher\nfclient.ico"
   push "$DESKTOP\NF Client.lnk"
   ;call ShellLinkSetRunAs
   ;pop $0
