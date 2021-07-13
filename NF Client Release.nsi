@@ -139,6 +139,7 @@ main:
   ;patcher
   SetOutPath "$INSTDIR\config"
   File "나죠안\minecraft\config\patcher.toml"
+  File "나죠안\minecraft\config\splash.properties"
   ;launcher profiles
   SetOutPath "$INSTDIR"
   ;File "나죠안\minecraft\launcher_profiles.json"
