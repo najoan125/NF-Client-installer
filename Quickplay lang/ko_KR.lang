@@ -1,0 +1,143 @@
+quickplay.offline=현재 하이픽셀 네트워크에 연결되어 있지 않습니다!
+quickplay.disabled=퀵 플레이가 강제로 비활성화되었습니다! 이유: %s
+quickplay.chat.separator=-
+quickplay.chat.clickToOpen=클릭하여 엽니다.
+
+quickplay.commands.quickplay.help.help=사용 가능한 명령을 표시합니다.
+quickplay.commands.quickplay.config.help=Quickplay mod를 구성합니다.
+quickplay.commands.quickplay.limbo.help=limbo로 이동합니다.
+quickplay.commands.quickplay.limbo.alreadythere=오! 당신은 림보의 우두머리예요!
+quickplay.commands.quickplay.delivery.help=Delivery Man 메뉴를 엽니다.
+quickplay.commands.quickplay.keybinds.help=Quickplay Keybind 편집기를 엽니다.
+quickplay.commands.quickplay.moveinstance.deprecated=이 명령은 더 이상 사용되지 않습니다. 대신 "/qp config"을 사용해야 합니다!
+quickplay.commands.quickplay.discord.help=Quickplay 디스코드 서버에 가입합니다.
+quickplay.commands.quickplay.discord.message=디스코드는 @bugfrogy와 연락하는 가장 좋은 방법입니다. 질문, 피드백 또는 버그가 있으면 Quickplay 디스코드에 가입합니다.
+quickplay.commands.quickplay.party.help=Quickplay 파티 모드를 사용자 지정합니다.
+quickplay.commands.quickplay.premium.help=Quickplay Premium 기능을 위한 명령입니다.
+quickplay.commands.quickplay.premium.noCommands=알려진 명령이 없습니다!
+quickplay.commands.quickplay.premium.about.menuMissing=죄송합니다. Quickplay가 Quickplay Premium에 대한 최신 정보를 수집하지 못했습니다! %s 에 방문하세요.
+quickplay.commands.quickplay.premium.about.menuMissing.clickToOpen=클릭하여 엽니다 %s
+quickplay.commands.quickplay.history.help=마지막으로 사용한 인스턴스를 확인합니다.
+quickplay.commands.quickplay.history.header=마지막으로 사용한 %s 인스턴스는 다음과 같습니다. 가장 최근 인스턴스는 맨 위에 표시:
+quickplay.commands.quickplay.history.error=뭔가 잘못됐어요!
+quickplay.commands.quickplay.wiki.help=Quickplay 도움말 웹 사이트를 엽니다.
+quickplay.commands.hub.numberexception=로비 번호가 잘못되었습니다! 구문: %s
+quickplay.commands.usage=명령어 문법:
+
+quickplay.premium.permissions=이 기능을 사용하려면 Quickplay Premium이 필요합니다!
+
+quickplay.gui.copyright=Copyright © %s bugfroggy
+quickplay.gui.favorite=키에 바인딩합니다...
+quickplay.gui.close=닫기
+quickplay.gui.back=뒤로
+
+quickplay.settings.category.general=일반
+
+quickplay.settings.category.colors=색깔
+quickplay.settings.primaryColor.name=기본 색상
+quickplay.settings.primaryColor.help=Quickplay 기본 색 변경
+quickplay.settings.secondaryColor.name=두 번째 색깔
+quickplay.settings.secondaryColor.help=Quickplay 두 번째 색 변경
+
+quickplay.settings.category.gui=GUI
+quickplay.settings.blurGuiBackgrounds.name=GUI 배경 흐리게
+quickplay.settings.blurGuiBackgrounds.help=Quickplay GUI의 배경이 약간 흐려져야 하는지 여부입니다.
+quickplay.settings.fadeInGuis.name=GUI 페이드 인
+quickplay.settings.fadeInGuis.help=GUI를 열 때 점점 밝아지는 효과를 적용해야 하는지 여부입니다.
+quickplay.settings.transparentBackgrounds.name=투명 배경
+quickplay.settings.transparentBackgrounds.help=Quickplay GUI 배경이 투명하게 할 것인지 여부입니다.
+quickplay.settings.gameLogoScale.name=메인 메뉴 비율
+quickplay.settings.gameLogoScale.help=Quickplay 기본 메뉴에 있는 각 항목의 비율입니다.
+quickplay.settings.reverseScrollingDirection.name=스크롤 방향을 반대로 이동
+quickplay.settings.reverseScrollingDirection.help=방향을 반대로 스크롤하고 끌면 화면이 움직입니다.
+quickplay.settings.anyKeyClosesGui.name=아무 키나 눌러 GUI 닫기
+quickplay.settings.anyKeyClosesGui.help=Quickplay의 메인 메뉴와 게임 GUI는 키를 누를 때마다 닫힙니다.
+quickplay.settings.compactMainMenu.name=콤팩트 메인 메뉴
+quickplay.settings.compactMainMenu.help=게임 문자열 위로 마우스를 가져가지 않는 한 게임 문자열을 숨기도록 Quickplay 기본 메뉴를 압축할지 여부를 지정합니다.
+
+quickplay.settings.category.instanceDisplay=인스턴스 표시
+quickplay.settings.instanceDisplay.name=인스턴스 표시
+quickplay.settings.instanceDisplay.help=현재 서버 인스턴스(현재 서버의 위치)를 화면에 표시할지 여부를 나타냅니다.
+quickplay.settings.moveInstanceDisplayButton.name=인스턴스 디스플레이를 이동...
+quickplay.settings.moveInstanceDisplayButton.help=화면의 인스턴스 디스플레이 위치를 변경합니다.
+quickplay.settings.instanceOpacity.name=인스턴스 디스플레이 불투명도
+quickplay.settings.instanceOpacity.help=인스턴스 디스플레이의 불투명도입니다.
+quickplay.settings.displayInstanceWithChatOpen.name=채팅으로 표시
+quickplay.settings.displayInstanceWithChatOpen.help=채팅창이 열려 있는 경우에도 인스턴스 표시를 렌더링할지 여부입니다.
+quickplay.settings.instanceDisplayScale.name=비율
+quickplay.settings.instanceDisplayScale.help=인스턴스(instance) 표시의 척도입니다.
+
+quickplay.settings.sendUsageStatsButton.name=사용 통계...
+quickplay.settings.sendUsageStatsButton.help=익명 사용 통계를 보내면 더 나은 모드를 만들 수 있습니다!
+quickplay.settings.editKeybinds.name=키 설정 편집...
+quickplay.settings.editKeybinds.help=마우스 오른쪽 단추로 게임 또는 모드를 클릭하여 이전에 만든 키 설정을 할당 및 제거합니다.
+quickplay.settings.lobbyOneSwap.name=로비 1번으로 교체
+quickplay.settings.lobbyOneSwap.help=새 로비에 참가할 때마다 로비로 교체합니다.
+quickplay.settings.updateNotifications.name=업데이트 알림
+quickplay.settings.updateNotifications.help=새 버전의 Quickplay가 릴리스될 때 알림을 받을지 여부입니다. 이 설정에 관계없이 게임 목록이 자동으로 업데이트됩니다.
+quickplay.settings.redesignedLobbyCommand.name=사용자 지정 로비 명령
+quickplay.settings.redesignedLobbyCommand.help=가능한 경우 사용자 지정 Quickplay 로비 명령을 사용해야 하는지 여부입니다. 게임을 다시 시작해야 합니다.
+
+quickplay.settings.category.partyMode=파티 모드
+quickplay.settings.partyModeDelay.name=시작 지연
+quickplay.settings.partyModeDelay.help=시간(초) 임의 추출이 필요합니다.
+quickplay.settings.partyModeGui.name=랜덤화 GUI를 시작
+quickplay.settings.partyModeGui.help=사용자가 파티 모드를 시작할 때 특수 스피너 GUI를 열어야 하는지 여부입니다.
+
+quickplay.settings.category.premium=프리미엄 기능
+quickplay.settings.ingameDailyReward.name=인게임 일간보상
+quickplay.settings.ingameDailyReward.help=일일 보상 취급이 브라우저가 아닌 게임 내여야 하는지 여부이므로 웹 페이지를 열 필요가 없습니다.
+quickplay.settings.displayOwnGlyph.name=고유 글리프를 표시
+quickplay.settings.displayOwnGlyph.help=F5 모드에서 자신의 글리프를 머리 위에 표시할지 여부를 나타냅니다.
+quickplay.config.keybinds.openmain=Quickplay GUI 열기
+quickplay.config.saveerror=구성을 저장하는 동안 오류가 발생했습니다. 설정을 저장할 수 없습니다!
+quickplay.config.gui.title=Quickplay 구성
+quickplay.config.gui.version=버전
+quickplay.config.gui.true=켜짐
+quickplay.config.gui.false=꺼짐
+quickplay.config.openfolder=폴더 열기
+quickplay.config.color.gui.sampletext=예제 텍스트
+quickplay.config.color.gui.red=빨강
+quickplay.config.color.gui.green=초록
+quickplay.config.color.gui.blue=파랑
+quickplay.config.color.gui.chromaspeed=크로마 속도
+quickplay.config.color.gui.chromaspeed.off=끄기
+quickplay.config.color.gui.chromaspeed.slow=느림
+quickplay.config.color.gui.chromaspeed.medium=보통
+quickplay.config.color.gui.chromaspeed.fast=빠름
+quickplay.config.color.gui.chromaspeed.insane=매우 빠름
+
+quickplay.gui.main.nogames.header=아이고!
+quickplay.gui.main.nogames.issue=어떤 게임을 이용할 수 있는지 알 수 없었던 것 같아요.
+quickplay.gui.main.nogames.why=이 문제는 mod만 설치한 경우 발생할 수 있습니다.
+quickplay.gui.main.nogames.contact=게임을 다시 시작하거나, 문제가 해결되지 않으면 나죠안에게 연락하세요!
+
+quickplay.gui.stats.yes=예, 통계를 전송합니다.
+quickplay.gui.stats.no=아니요, 통계를 보내지 않습니다.
+quickplay.gui.stats.title=익명 Quickplay 사용 통계를 전송합니까?
+quickplay.gui.stats.description="예"를 선택하면 게임과 내 마인크래프트 모드의 사용 방법에 대한 익명 데이터가 전송되어 버그를 수정하고 더 나은 업데이트를 만들 수 있습니다! 이 데이터에는 마인크래프트 버전, Forge 버전, Java 버전, 운영 체제 버전, 설치된 마인크래프트 모드 및 Quickplay 설정이 포함되지만 이에 국한되지는 않습니다. 수집된 데이터의 전체 목록은 다운로드 스레드를 참조합니다. 이 설정은 나중에 구성에서 변경할 수 있습니다.
+quickplay.gui.stats.token=통계 토큰은 %s입니다.
+quickplay.gui.stats.copied=클립보드에 복사되었습니다!
+quickplay.gui.stats.copy=클릭하여 복사
+quickplay.gui.stats.privacy=개인정보 보호정책
+quickplay.gui.stats.privacyerror=문제가 발생했습니다. %s
+
+quickplay.party.syntax=구문이 잘못되었습니다! "%s"를 입력합니다!
+quickplay.party.sendingYou=%s로 보냅니다!
+quickplay.party.commencing=Quickplay Party Mode 시작 시퀀스를 시작합니다...
+quickplay.party.nogames=오! 파티 모드에 선택한 게임이 없습니다.
+quickplay.gui.party.randomizing=무작위 게임모드를 고르고 있어요...
+quickplay.gui.party.allon=모두 허용
+quickplay.gui.party.alloff=모두 비허용
+quickplay.gui.party.launch=실행!
+
+quickplay.keybinds.illegal="%s" 키 설정이 어떤 이유로 유효하지 않음! 다시 만들어 보십시오.
+quickplay.keybinds.title=키 설정
+quickplay.keybinds.reset=키 설정 초기화
+quickplay.gui.keybinds.delete=제거
+quickplay.gui.keybinds.taken=이 키는 이미 Quickplay 기능에 할당되어 있습니다!
+
+quickplay.moveableHudElement.small=작음
+quickplay.moveableHudElement.medium=보통
+quickplay.moveableHudElement.large=큼
+quickplay.moveableHudElement.xlarge=매우 큼
