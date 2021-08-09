@@ -51,7 +51,7 @@
             "action" : 
             {
                 "type" : "connectToServer",
-                "ip" : "asia.hypixel.net"
+                "ip" : "mc.hypixel.net"
             }
         },
 		"Replay":

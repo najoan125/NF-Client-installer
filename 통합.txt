@@ -12,7 +12,7 @@ NF Client를 이용해 주셔서 감사합니다.
 
 5.본 설치기는 언제든지 업데이트가 될 수 있습니다. 
   아래 사이트에서 새로운 버전이 나왔는지 확인해주세요.
-  (이 설치기 버전은 2021.75 입니다)
+  (이 설치기 버전은 2021.76 입니다)
   설치기 다운로드 주소: https://www.nfclient.kro.kr/download
   
 6.이 클라이언트는 모든 컴퓨터에서 안정적으로 작동하지 않으며, 몇몇 컴퓨터에서 에러가 발생할 수 있습니다.
@@ -29,6 +29,7 @@ NF Client를 이용해 주셔서 감사합니다.
 2021.73: DirectionHUD 활성화/비활성화 가능하게 변경, 자동접속 버튼 위치 변경, Quickplay 한글화 문제 해결
 2021.74: 버그 수정(하이픽셀 인게임 일간보상 제거)
 2021.75: Hypixel 인게임 일간보상 버그 수정
+2021.76: Hypixel 인게임 일간보상 버그 수정 및 기능 개선
 
 모든 변경사항: https://pastebin.com/UhkZmm65
 ────────────────────────
@@ -55,7 +56,7 @@ Time Changer: https://hypixel.net/threads/forge-1-8-9-timechanger-2-2-1-an-impro
 ForceAsciiFont: https://www.curseforge.com/minecraft/mc-mods/forceasciifont
 Sidebar Mod: https://youtu.be/cn9VvT43yRs
 RewardClaim: https://hypixel.net/threads/forge-1-8-9-rewardclaim-claim-your-daily-rewards-ingame.2716161/
-	Fix Version: https://github.com/najoan125/RewardClaim
+	Fix Version: https://github.com/js6pak/RewardClaim
 기타(sk1er): https://sk1er.club
 ────────────────────────
 
