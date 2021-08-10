@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "NF Client"
-!define PRODUCT_VERSION "2021.76" ;download PRODUCT_VERSION.7z
+!define PRODUCT_VERSION "2021.80" ;download PRODUCT_VERSION.7z
 !define PRODUCT_PUBLISHER "NF Client"
 !define PRODUCT_WEB_SITE "https://www.nfclient.kro.kr"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
@@ -111,6 +111,15 @@ Section "MainSection" SEC01
   Messagebox MB_OKCANCEL "경고: NF Client에 따로 설치한 모드는 삭제됩니다.$\n$\n설치를 취소하시려면 취소를 누르세요" IDCANCEL END
   CreateDirectory "$APPDATA\.nfclient"
   ;delete "$INSTDIR\mods\*.*"
+  iffileexists "$INSTDIR\essential\config.toml" eso esx
+eso:
+  goto ifaddon
+esx:
+  SetOutPath "$INSTDIR\essential"
+  File "나죠안\minecraft\essential\config.toml"
+  File "나죠안\minecraft\essential\onboarding.json"
+  goto ifaddon
+ifaddon:
   iffileexists "$INSTDIR\mods\1.12.2\ScreenshotToClipboard-1.12.2-1.0.1.jar" addon nonaddon
 addon:
   RMDir /r "$INSTDIR\mods\1.8.9"
