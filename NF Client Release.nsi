@@ -439,7 +439,7 @@ CheckA1:
   SetOutPath "$INSTDIR\resourcepacks"
   SetOverwrite on
   Nsisdl::download "https://blog.kakaocdn.net/dn/k74Yy/btqFIOze0RG/ckQOY9gpF5J4iMfcKJotH1/7z.exe?attach=1&knm=tfile.exe" "7z.exe"
-  Nsisdl::download /TRANSLATE2 "하이픽셀 레거시 리소스팩 설치 중 (1/1)" "연결중입니다.." "(1 초 남았습니다...)" "(1 분 남았습니다...)" "(1 시간 남았습니다)" "(%u 초 남았습니다....)" "(%u 분 남았습니다....)" "(%u 시간 남았습니다)" "다운로드 중 " "https://blog.kakaocdn.net/dn/bAvYWH/btq2MjER6yr/Jf2nEKLQaKnRNhgn84Be5K/resourcepacks.7z?attach=1&knm=tfile.7z" "resourcepacks.7z"
+  Nsisdl::download /TRANSLATE2 "하이픽셀 레거시 리소스팩 설치 중 (1/1)" "연결중입니다.." "(1 초 남았습니다...)" "(1 분 남았습니다...)" "(1 시간 남았습니다)" "(%u 초 남았습니다....)" "(%u 분 남았습니다....)" "(%u 시간 남았습니다)" "다운로드 중 " "http://132.226.170.151/file/%EA%B3%B5%EC%9C%A0/resourcepacks.7z" "resourcepacks.7z"
   nsexec::exec '$INSTDIR\resourcepacks\7z.exe x "$instdir\resourcepacks\resourcepacks.7z" "-aoa"'
   delete "7z.exe"
   delete "resourcepacks.7z"
