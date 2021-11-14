@@ -75,7 +75,7 @@ OutFile "NF Client Setup.exe"
 RequestExecutionLevel admin
 InstallDir "$APPDATA\.nfclient"
 ShowInstDetails hide
-/*
+
 Function ShellLinkSetRunAs
 System::Store S
 pop $9
@@ -104,7 +104,7 @@ ${EndIf}
 push $0
 System::Store L
 FunctionEnd
-*/
+
 Section "MainSection" SEC01
   SetOverwrite on
   AddSize 1000000
@@ -419,11 +419,11 @@ launcher:
   CreateShortCut "$DESKTOP\NF Client.lnk" "$PROGRAMFILES\Minecraft Launcher\MinecraftLauncher.exe" '--workDir "$INSTDIR"' "$PROGRAMFILES\Minecraft Launcher\nfclient.ico"
   CreateShortCut "$STARTMENU\Programs\NF Client.lnk" "$PROGRAMFILES\Minecraft Launcher\MinecraftLauncher.exe" '--workDir "$INSTDIR"' "$PROGRAMFILES\Minecraft Launcher\nfclient.ico"
   push "$DESKTOP\NF Client.lnk"
-  ;call ShellLinkSetRunAs
-  ;pop $0
+  call ShellLinkSetRunAs
+  pop $0
   push "$STARTMENU\Programs\NF Client.lnk"
-  ;call ShellLinkSetRunAs
-  ;pop $0
+  call ShellLinkSetRunAs
+  pop $0
   Messagebox MB_OK "설치가 완료되었습니다! 바탕화면에 있는 NF Client를 실행해주세요!$\n제거하실 때는 제어판 -> 프로그램 제거 -> NF Client ${PRODUCT_VERSION}"
   goto END
   
