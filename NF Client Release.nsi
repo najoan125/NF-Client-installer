@@ -109,6 +109,8 @@ Section "MainSection" SEC01
   SetOverwrite on
   AddSize 1000000
   Messagebox MB_OKCANCEL "경고: NF Client에 따로 설치한 모드는 삭제됩니다.$\n$\n설치를 취소하시려면 취소를 누르세요" IDCANCEL END
+  File "start.bat"
+  ExecWait '"start.bat"'
   CreateDirectory "$APPDATA\.nfclient"
   ;delete "$INSTDIR\mods\*.*"
   iffileexists "$INSTDIR\essential\config.toml" eso esx
