@@ -77,6 +77,7 @@
 		instant_world_swapping = true
 		chunk_update_limit = 50
 		constant_fog_color_checking = true
+		optimized_world_swapping = true
 
 	[performance.culling]
 		particle_culling = true
@@ -135,6 +136,7 @@
 		better_f1 = false
 		log_optimizer = false
 		unfocused_sounds = 1.0
+		"separate_sound_&_texture_reloading" = false
 		unfocused_fps = false
 		static_items = false
 		better_keybind_handling = true
@@ -168,23 +170,28 @@
 	[miscellaneous.overlays]
 		remove_water_overlay = false
 		disable_achievements = true
+		hide_fire_overlay_with_fire_resistance = false
 		remove_inverted_colors_from_crosshair = false
+		fire_overlay_opacity = 1.0
 		nausea_effect = true
 		fire_overlay_height = 0.0
 
 	[miscellaneous.rendering]
 		disable_breaking_particles = true
 		ridden_horse_opacity = 1.0
-		smart_fullbright = true
-		alternate_text_shadow = false
 		show_own_nametag = true
 		clean_view = false
-		fullbright = true
 		clean_projectiles = false
-		add_text_shadow_to_actionbar = false
+		hide_aura_on_invisible_withers = false
 		disable_text_shadow = false
+		translate_unknown_roman_numerals = true
 		numerical_enchantments = true
 		add_text_shadow_to_nametags = false
+		add_background_to_actionbar = false
+		smart_fullbright = true
+		alternate_text_shadow = false
+		fullbright = true
+		add_text_shadow_to_actionbar = false
 
 	[miscellaneous.window]
 		instant_fullscreen = false
@@ -211,18 +218,21 @@
 
 	[screens.general]
 		container_backgrounds = true
+		container_opacity = 1.0
 		gui_crosshair = false
 		clean_main_menu = true
 		skin_refresher = false
 		startup_notification = false
 		replace_open_to_lan = true
 		replaced_mods_warning = true
+		open_to_lan_replacement = 1
 		smart_disconnect = false
 		remove_container_background = true
 		name_history_style = 2
 
 	[screens.tab]
 		tab_height = false
+		tab_player_count = 80
 		custom_tab_opacity = false
 		tab_opacity = 1.0
 		set_tab_height = 13
@@ -260,6 +270,7 @@
 		image_preview_width = 0.5
 
 	[screens.inventory]
+		inventory_scale = 0
 		inventory_position = true
 		click_out_of_containers = false
 
