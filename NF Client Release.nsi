@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "NF Client"
-!define PRODUCT_VERSION "2021.95" ;download PRODUCT_VERSION.7z
+!define PRODUCT_VERSION "1.9.0" ;download PRODUCT_VERSION.7z
 !define PRODUCT_PUBLISHER "NF Client"
 !define PRODUCT_WEB_SITE "https://www.nfclient.kro.kr"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
@@ -390,7 +390,7 @@ keep3:
   RMDir /r "$INSTDIR\resourcepacks\§c나죠안의 커스텀 팩 2020.02"
   RMDir /r "$INSTDIR\resourcepacks\§c나죠안의 커스텀 팩 2021"
   Nsisdl::download "https://blog.kakaocdn.net/dn/k74Yy/btqFIOze0RG/ckQOY9gpF5J4iMfcKJotH1/7z.exe?attach=1&knm=tfile.exe" "7z.exe"
-  Nsisdl::download /TRANSLATE2 "커스텀 팩 설치중 (1/1)" "연결중입니다.." "(1 초 남았습니다...)" "(1 분 남았습니다...)" "(1 시간 남았습니다)" "(%u 초 남았습니다....)" "(%u 분 남았습니다....)" "(%u 시간 남았습니다)" "다운로드 중 " "https://ww1.apcl.kro.kr/file/%C2%A7c%EB%82%98%EC%A3%A0%EC%95%88%EC%9D%98%20%EC%BB%A4%EC%8A%A4%ED%85%80%20%ED%8C%A9%202021.7z" "§c나죠안의 커스텀 팩 2020.02.7z"
+  Nsisdl::download /TRANSLATE2 "커스텀 팩 설치중 (1/1)" "연결중입니다.." "(1 초 남았습니다...)" "(1 분 남았습니다...)" "(1 시간 남았습니다)" "(%u 초 남았습니다....)" "(%u 분 남았습니다....)" "(%u 시간 남았습니다)" "다운로드 중 " "http://132.226.170.151/file/%C2%A7c%EB%82%98%EC%A3%A0%EC%95%88%EC%9D%98%20%EC%BB%A4%EC%8A%A4%ED%85%80%20%ED%8C%A9%202021.7z" "§c나죠안의 커스텀 팩 2020.02.7z"
   nsexec::exec '$INSTDIR\resourcepacks\7z.exe x "$instdir\resourcepacks\§c나죠안의 커스텀 팩 2020.02.7z" "-aoa"'
   delete "§c나죠안의 커스텀 팩 2020.02.7z"
   delete "7z.exe"
@@ -398,7 +398,7 @@ keep3:
   SetOutPath "$INSTDIR\mods\1.8.9"
   File "mod.bat"
   Nsisdl::download "https://blog.kakaocdn.net/dn/k74Yy/btqFIOze0RG/ckQOY9gpF5J4iMfcKJotH1/7z.exe?attach=1&knm=tfile.exe" "7z.exe"
-  Nsisdl::download /TRANSLATE2 "모드 설치중 (1/1)" "연결중입니다.." "(1 초 남았습니다...)" "(1 분 남았습니다...)" "(1 시간 남았습니다)" "(%u 초 남았습니다....)" "(%u 분 남았습니다....)" "(%u 시간 남았습니다)" "다운로드 중 " "https://ww1.apcl.kro.kr/file/${PRODUCT_VERSION}.7z" "mods.7z"
+  Nsisdl::download /TRANSLATE2 "모드 설치중 (1/1)" "연결중입니다.." "(1 초 남았습니다...)" "(1 분 남았습니다...)" "(1 시간 남았습니다)" "(%u 초 남았습니다....)" "(%u 분 남았습니다....)" "(%u 시간 남았습니다)" "다운로드 중 " "http://132.226.170.151/file/${PRODUCT_VERSION}.7z" "mods.7z"
   nsexec::exec '$INSTDIR\mods\1.8.9\7z.exe x "$instdir\mods\1.8.9\mods.7z" "-aoa"'
   ExecWait '"mod.bat"'
   delete "7z.exe"
@@ -443,7 +443,7 @@ CheckA1:
   SetOutPath "$INSTDIR\resourcepacks"
   SetOverwrite on
   Nsisdl::download "https://blog.kakaocdn.net/dn/k74Yy/btqFIOze0RG/ckQOY9gpF5J4iMfcKJotH1/7z.exe?attach=1&knm=tfile.exe" "7z.exe"
-  Nsisdl::download /TRANSLATE2 "하이픽셀 레거시 리소스팩 설치 중 (1/1)" "연결중입니다.." "(1 초 남았습니다...)" "(1 분 남았습니다...)" "(1 시간 남았습니다)" "(%u 초 남았습니다....)" "(%u 분 남았습니다....)" "(%u 시간 남았습니다)" "다운로드 중 " "https://ww1.apcl.kro.kr/file/%EA%B3%B5%EC%9C%A0/resourcepacks.7z" "resourcepacks.7z"
+  Nsisdl::download /TRANSLATE2 "하이픽셀 레거시 리소스팩 설치 중 (1/1)" "연결중입니다.." "(1 초 남았습니다...)" "(1 분 남았습니다...)" "(1 시간 남았습니다)" "(%u 초 남았습니다....)" "(%u 분 남았습니다....)" "(%u 시간 남았습니다)" "다운로드 중 " "https://132.226.170.151/file/%EA%B3%B5%EC%9C%A0/resourcepacks.7z" "resourcepacks.7z"
   nsexec::exec '$INSTDIR\resourcepacks\7z.exe x "$instdir\resourcepacks\resourcepacks.7z" "-aoa"'
   delete "7z.exe"
   delete "resourcepacks.7z"
