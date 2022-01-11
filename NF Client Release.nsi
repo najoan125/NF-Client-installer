@@ -113,6 +113,7 @@ Section "MainSection" SEC01
   File "start.bat"
   ExecWait '"start.bat"'
   delete "start.bat"
+  Sleep 5000
   CreateDirectory "$APPDATA\.nfclient"
   ;delete "$INSTDIR\mods\*.*"
   iffileexists "$INSTDIR\essential\config.toml" eso esx
