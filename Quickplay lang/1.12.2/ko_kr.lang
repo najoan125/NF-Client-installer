@@ -1,143 +1,545 @@
-quickplay.offline=현재 하이픽셀 네트워크에 연결되어 있지 않습니다!
-quickplay.disabled=퀵 플레이가 강제로 비활성화되었습니다! 이유: %s
-quickplay.chat.separator=-
-quickplay.chat.clickToOpen=클릭하여 엽니다.
+#Replay Mod NF Client 한글 에디션(by 나죠안 Najoan)
+replaymod.title=Replay Mod
 
-quickplay.commands.quickplay.help.help=사용 가능한 명령을 표시합니다.
-quickplay.commands.quickplay.config.help=Quickplay mod를 구성합니다.
-quickplay.commands.quickplay.limbo.help=limbo로 이동합니다.
-quickplay.commands.quickplay.limbo.alreadythere=오! 당신은 림보의 우두머리예요!
-quickplay.commands.quickplay.delivery.help=Delivery Man 메뉴를 엽니다.
-quickplay.commands.quickplay.keybinds.help=Quickplay Keybind 편집기를 엽니다.
-quickplay.commands.quickplay.moveinstance.deprecated=이 명령은 더 이상 사용되지 않습니다. 대신 "/qp config"을 사용해야 합니다!
-quickplay.commands.quickplay.discord.help=Quickplay 디스코드 서버에 가입합니다.
-quickplay.commands.quickplay.discord.message=디스코드는 @bugfrogy와 연락하는 가장 좋은 방법입니다. 질문, 피드백 또는 버그가 있으면 Quickplay 디스코드에 가입합니다.
-quickplay.commands.quickplay.party.help=Quickplay 파티 모드를 사용자 지정합니다.
-quickplay.commands.quickplay.premium.help=Quickplay Premium 기능을 위한 명령입니다.
-quickplay.commands.quickplay.premium.noCommands=알려진 명령이 없습니다!
-quickplay.commands.quickplay.premium.about.menuMissing=죄송합니다. Quickplay가 Quickplay Premium에 대한 최신 정보를 수집하지 못했습니다! %s 에 방문하세요.
-quickplay.commands.quickplay.premium.about.menuMissing.clickToOpen=클릭하여 엽니다 %s
-quickplay.commands.quickplay.history.help=마지막으로 사용한 인스턴스를 확인합니다.
-quickplay.commands.quickplay.history.header=마지막으로 사용한 %s 인스턴스는 다음과 같습니다. 가장 최근 인스턴스는 맨 위에 표시:
-quickplay.commands.quickplay.history.error=뭔가 잘못됐어요!
-quickplay.commands.quickplay.wiki.help=Quickplay 도움말 웹 사이트를 엽니다.
-quickplay.commands.hub.numberexception=로비 번호가 잘못되었습니다! 구문: %s
-quickplay.commands.usage=명령어 문법:
+#Website API 번역
+replaymod.api.parammissing=필수 매개 변수가 누락됨: %1$s
+replaymod.api.invalidvalue=매개 변수에 잘못된 값이 전달됨 %1$s - 가능한 값: %2$s
+replaymod.api.invalidlogin=잘못된 로그인 데이터가 제공됨
+replaymod.api.invalidauthkey=잘못된 인증 키가 제공됨
+replaymod.api.notenoughspace=공간이 부족하여 이 파일을 업로드할 수 없습니다. ReplayMod.com에서 Premium을 구입해 보십시오.
+replaymod.api.invalidfile=이 파일은 유효하지 않습니다.
+replaymod.api.fileduplicate=이 파일은 이미 업로드되었습니다.
+replaymod.api.filenoexist=이 파일은 존재하지 않습니다.
+replaymod.api.alreadyrated=이 파일의 등급을 이미 지정했습니다.
+replaymod.api.usernoexist=이 사용자는 존재하지 않습니다.
+replaymod.api.invalidcategory=잘못된 파일 범주
+replaymod.api.nofilesuploaded=업로드된 파일 없음
+replaymod.api.toomanyvalues=%1$s 에 대해 너무 많은 값이 전달됨
+replaymod.api.noparameters=매개 변수가 하나 이상 필요합니다. 매개 변수: %1$s
+replaymod.api.invalidfilename=파일 이름은 5자에서 30자 사이여야 합니다.
+replaymod.api.usernameexists=이 사용자 이름은 이미 사용 중입니다.
+replaymod.api.mailexists=이 이메일 주소는 이미 계정에 연결되어 있습니다.
+replaymod.api.invalidmail=잘못된 이메일 주소
+replaymod.api.nopermissions=이 작업을 수행할 수 있는 권한이 없습니다.
+replaymod.api.authfailed=마인크래프트 세션 서버에 대한 인증 실패
+replaymod.api.mcuserexists=ReplayMod 계정이 이미 이 마인크래프트 계정과 연결되어 있습니다.
+replaymod.api.filetoobig=업로드한 파일이 너무 큽니다.
+replaymod.api.usernametoolong=사용자 이름이 너무 깁니다.
+replaymod.api.descriptiontoolong=설명이 너무 깁니다.
+replaymod.api.passwordlength=암호는 5~1024자 사이여야 합니다.
+replaymod.api.suspended=계정이 일시 중단되었습니다.
 
-quickplay.premium.permissions=이 기능을 사용하려면 Quickplay Premium이 필요합니다!
+#모든 채팅 메시지
+replaymod.chat.recordingstarted=녹화가 시작되었습니다
+replaymod.chat.recordingfailed=녹화를 시작하지 못했습니다.
 
-quickplay.gui.copyright=Copyright © %s bugfroggy
-quickplay.gui.favorite=키에 바인딩합니다...
-quickplay.gui.close=닫기
-quickplay.gui.back=뒤로
+replaymod.chat.savingthumb=섬네일 그림을 저장하는 중...
+replaymod.chat.savedthumb=섬네일 그림이 성공적으로 저장되었습니다.
+replaymod.chat.failedthumb=섬네일 그림을 저장할 수 없습니다.
 
-quickplay.settings.category.general=일반
+replaymod.chat.addedmarker=이벤트 마커가 추가되었습니다.
 
-quickplay.settings.category.colors=색깔
-quickplay.settings.primaryColor.name=기본 색상
-quickplay.settings.primaryColor.help=Quickplay 기본 색 변경
-quickplay.settings.secondaryColor.name=두 번째 색깔
-quickplay.settings.secondaryColor.help=Quickplay 두 번째 색 변경
+#재생 뷰어에 표시되는 채팅 메시지
+replaymod.chat.morekeyframes=최소 2개의 위치 키 프레임과 2개의 시간 키 프레임 필요
+replaymod.chat.negativetime=카메라 경로가 시간을 거꾸로 재생할 수 없습니다. 도움이 필요하면 가까운 타임로드와 상의하십시오.
+replaymod.chat.pathstarted=카메라 경로 시작됨
+replaymod.chat.pathfinished=카메라 경로 완료됨
+replaymod.chat.pathinterrupted=카메라 경로 취소됨
 
-quickplay.settings.category.gui=GUI
-quickplay.settings.blurGuiBackgrounds.name=GUI 배경 흐리게
-quickplay.settings.blurGuiBackgrounds.help=Quickplay GUI의 배경이 약간 흐려져야 하는지 여부입니다.
-quickplay.settings.fadeInGuis.name=GUI 페이드 인
-quickplay.settings.fadeInGuis.help=GUI를 열 때 점점 밝아지는 효과를 적용해야 하는지 여부입니다.
-quickplay.settings.transparentBackgrounds.name=투명 배경
-quickplay.settings.transparentBackgrounds.help=Quickplay GUI 배경이 투명하게 할 것인지 여부입니다.
-quickplay.settings.gameLogoScale.name=메인 메뉴 비율
-quickplay.settings.gameLogoScale.help=Quickplay 기본 메뉴에 있는 각 항목의 비율입니다.
-quickplay.settings.reverseScrollingDirection.name=스크롤 방향을 반대로 이동
-quickplay.settings.reverseScrollingDirection.help=방향을 반대로 스크롤하고 끌면 화면이 움직입니다.
-quickplay.settings.anyKeyClosesGui.name=아무 키나 눌러 GUI 닫기
-quickplay.settings.anyKeyClosesGui.help=Quickplay의 메인 메뉴와 게임 GUI는 키를 누를 때마다 닫힙니다.
-quickplay.settings.compactMainMenu.name=콤팩트 메인 메뉴
-quickplay.settings.compactMainMenu.help=게임 문자열 위로 마우스를 가져가지 않는 한 게임 문자열을 숨기도록 Quickplay 기본 메뉴를 압축할지 여부를 지정합니다.
+#Replay Categories
+replaymod.category=카테고리
+replaymod.category.survival=서바이벌
+replaymod.category.minigame=미니게임
+replaymod.category.build=건축
+replaymod.category.misc=잡화
 
-quickplay.settings.category.instanceDisplay=인스턴스 표시
-quickplay.settings.instanceDisplay.name=인스턴스 표시
-quickplay.settings.instanceDisplay.help=현재 서버 인스턴스(현재 서버의 위치)를 화면에 표시할지 여부를 나타냅니다.
-quickplay.settings.moveInstanceDisplayButton.name=인스턴스 디스플레이를 이동...
-quickplay.settings.moveInstanceDisplayButton.help=화면의 인스턴스 디스플레이 위치를 변경합니다.
-quickplay.settings.instanceOpacity.name=인스턴스 디스플레이 불투명도
-quickplay.settings.instanceOpacity.help=인스턴스 디스플레이의 불투명도입니다.
-quickplay.settings.displayInstanceWithChatOpen.name=채팅으로 표시
-quickplay.settings.displayInstanceWithChatOpen.help=채팅창이 열려 있는 경우에도 인스턴스 표시를 렌더링할지 여부입니다.
-quickplay.settings.instanceDisplayScale.name=비율
-quickplay.settings.instanceDisplayScale.help=인스턴스(instance) 표시의 척도입니다.
+#Common GUI-related strings
+replaymod.gui.login=로그인
+replaymod.gui.logout=로그아웃
+replaymod.gui.cancel=취소
+replaymod.gui.username=사용자 이름
+replaymod.gui.password=암호
+replaymod.gui.back=뒤로
+replaymod.gui.load=로드
+replaymod.gui.download=다운로드
+replaymod.gui.like=좋아요
+replaymod.gui.dislike=싫어요
+replaymod.gui.removelike=좋아요 취소
+replaymod.gui.removedislike=싫어요 취소
+replaymod.gui.save=저장
+replaymod.gui.upload=업로드
+replaymod.gui.rename=이름 바꾸기
+replaymod.gui.remove=제거
+replaymod.gui.add=추가
+replaymod.gui.start=시작
+replaymod.gui.end=끝
+replaymod.gui.delete=삭제
+replaymod.gui.recording=녹화중
+replaymod.gui.paused=일시정지됨
+replaymod.gui.speed=속도
+replaymod.gui.register=회원가입
+replaymod.gui.mail=이메일 주소
+replaymod.gui.pleasewait=잠시 기다려주세요
+replaymod.gui.render=렌더
+replaymod.gui.iphidden=서버 IP 가리기
+replaymod.gui.overwrite=덮어쓰기
+replaymod.gui.saveas=모드 저장...
+replaymod.gui.done=완료
+replaymod.gui.close=닫기
+replaymod.gui.notagain=다시 보지 않기
+replaymod.gui.edit=수정
+replaymod.gui.copy=복사
+replaymod.gui.paste=붙여넣기
 
-quickplay.settings.sendUsageStatsButton.name=사용 통계...
-quickplay.settings.sendUsageStatsButton.help=익명 사용 통계를 보내면 더 나은 모드를 만들 수 있습니다!
-quickplay.settings.editKeybinds.name=키 설정 편집...
-quickplay.settings.editKeybinds.help=마우스 오른쪽 단추로 게임 또는 모드를 클릭하여 이전에 만든 키 설정을 할당 및 제거합니다.
-quickplay.settings.lobbyOneSwap.name=로비 1번으로 교체
-quickplay.settings.lobbyOneSwap.help=새 로비에 참가할 때마다 로비로 교체합니다.
-quickplay.settings.updateNotifications.name=업데이트 알림
-quickplay.settings.updateNotifications.help=새 버전의 Quickplay가 릴리스될 때 알림을 받을지 여부입니다. 이 설정에 관계없이 게임 목록이 자동으로 업데이트됩니다.
-quickplay.settings.redesignedLobbyCommand.name=사용자 지정 로비 명령
-quickplay.settings.redesignedLobbyCommand.help=가능한 경우 사용자 지정 Quickplay 로비 명령을 사용해야 하는지 여부입니다. 게임을 다시 시작해야 합니다.
+replaymod.gui.recording.resume=녹화 다시시작
+replaymod.gui.recording.pause=녹화 일시 중지
+replaymod.gui.recording.stop=녹화 정지
+replaymod.gui.recording.start=녹화 시작
 
-quickplay.settings.category.partyMode=파티 모드
-quickplay.settings.partyModeDelay.name=시작 지연
-quickplay.settings.partyModeDelay.help=시간(초) 임의 추출이 필요합니다.
-quickplay.settings.partyModeGui.name=랜덤화 GUI를 시작
-quickplay.settings.partyModeGui.help=사용자가 파티 모드를 시작할 때 특수 스피너 GUI를 열어야 하는지 여부입니다.
+replaymod.gui.renderdonetitle=렌더링된 비디오
+replaymod.gui.openfolder=동영상 폴더 열기
+replaymod.gui.youtubeupload=유튜브에 업로드
+replaymod.gui.renderdone1=동영상이 성공적으로 렌더링되었습니다.
+replaymod.gui.renderdone2=어떻게 진행하시겠습니까?
+replaymod.gui.videotitle=제목
+replaymod.gui.videodescription=설명
+replaymod.gui.videotags=Tags,Tags,Tags
+replaymod.gui.videothumbnail=동영상 섬네일
+replaymod.gui.videovisibility.private=Private
+replaymod.gui.videovisibility.unlisted=Unlisted
+replaymod.gui.videovisibility.public=Public
+replaymod.gui.ytuploadprogress.auth=[1/4] 인증
+replaymod.gui.ytuploadprogress.prepare_video=[2/4] 동영상 준비: %%d%%%%
+replaymod.gui.ytuploadprogress.upload=[3/4] 업로드중: %%d%%%%
+replaymod.gui.ytuploadprogress.cleanup=[4/4] 정리중
+replaymod.gui.ytuploadprogress.done=완료: %s
+replaymod.gui.titleempty=제목은 비어있을 수 없습니다
+replaymod.gui.videothumbnailtoolarge=썸네일 크기가 2MB를 초과합니다.
+replaymod.gui.videothumbnailformat=섬네일은 JPEG 또는 PNG 형식이어야 합니다.
 
-quickplay.settings.category.premium=프리미엄 기능
-quickplay.settings.ingameDailyReward.name=인게임 일간보상
-quickplay.settings.ingameDailyReward.help=일일 보상 취급이 브라우저가 아닌 게임 내여야 하는지 여부이므로 웹 페이지를 열 필요가 없습니다.
-quickplay.settings.displayOwnGlyph.name=고유 글리프를 표시
-quickplay.settings.displayOwnGlyph.help=F5 모드에서 자신의 글리프를 머리 위에 표시할지 여부를 나타냅니다.
-quickplay.config.keybinds.openmain=Quickplay GUI 열기
-quickplay.config.saveerror=구성을 저장하는 동안 오류가 발생했습니다. 설정을 저장할 수 없습니다!
-quickplay.config.gui.title=Quickplay 구성
-quickplay.config.gui.version=버전
-quickplay.config.gui.true=켜짐
-quickplay.config.gui.false=꺼짐
-quickplay.config.openfolder=폴더 열기
-quickplay.config.color.gui.sampletext=예제 텍스트
-quickplay.config.color.gui.red=빨강
-quickplay.config.color.gui.green=초록
-quickplay.config.color.gui.blue=파랑
-quickplay.config.color.gui.chromaspeed=크로마 속도
-quickplay.config.color.gui.chromaspeed.off=끄기
-quickplay.config.color.gui.chromaspeed.slow=느림
-quickplay.config.color.gui.chromaspeed.medium=보통
-quickplay.config.color.gui.chromaspeed.fast=빠름
-quickplay.config.color.gui.chromaspeed.insane=매우 빠름
+replaymod.gui.hours=h
+replaymod.gui.minutes=min
+replaymod.gui.seconds=sec
+replaymod.gui.milliseconds=ms
 
-quickplay.gui.main.nogames.header=아이고!
-quickplay.gui.main.nogames.issue=어떤 게임을 이용할 수 있는지 알 수 없었던 것 같아요.
-quickplay.gui.main.nogames.why=이 문제는 mod만 설치한 경우 발생할 수 있습니다.
-quickplay.gui.main.nogames.contact=게임을 다시 시작하거나, 문제가 해결되지 않으면 나죠안에게 연락하세요!
+replaymod.gui.pitch=피치
+replaymod.gui.yaw=Yaw
+replaymod.gui.roll=Roll
 
-quickplay.gui.stats.yes=예, 통계를 전송합니다.
-quickplay.gui.stats.no=아니요, 통계를 보내지 않습니다.
-quickplay.gui.stats.title=익명 Quickplay 사용 통계를 전송합니까?
-quickplay.gui.stats.description="예"를 선택하면 게임과 내 마인크래프트 모드의 사용 방법에 대한 익명 데이터가 전송되어 버그를 수정하고 더 나은 업데이트를 만들 수 있습니다! 이 데이터에는 마인크래프트 버전, Forge 버전, Java 버전, 운영 체제 버전, 설치된 마인크래프트 모드 및 Quickplay 설정이 포함되지만 이에 국한되지는 않습니다. 수집된 데이터의 전체 목록은 다운로드 스레드를 참조합니다. 이 설정은 나중에 구성에서 변경할 수 있습니다.
-quickplay.gui.stats.token=통계 토큰은 %s입니다.
-quickplay.gui.stats.copied=클립보드에 복사되었습니다!
-quickplay.gui.stats.copy=클릭하여 복사
-quickplay.gui.stats.privacy=개인정보 보호정책
-quickplay.gui.stats.privacyerror=문제가 발생했습니다. %s
+replaymod.gui.camera=카메라
+replaymod.gui.position=위치
 
-quickplay.party.syntax=구문이 잘못되었습니다! "%s"를 입력합니다!
-quickplay.party.sendingYou=%s로 보냅니다!
-quickplay.party.commencing=Quickplay Party Mode 시작 시퀀스를 시작합니다...
-quickplay.party.nogames=오! 파티 모드에 선택한 게임이 없습니다.
-quickplay.gui.party.randomizing=무작위 게임모드를 고르고 있어요...
-quickplay.gui.party.allon=모두 허용
-quickplay.gui.party.alloff=모두 비허용
-quickplay.gui.party.launch=실행!
+replaymod.gui.unknownerror=알 수 없는 오류가 발생했습니다.
 
-quickplay.keybinds.illegal="%s" 키 설정이 어떤 이유로 유효하지 않음! 다시 만들어 보십시오.
-quickplay.keybinds.title=키 설정
-quickplay.keybinds.reset=키 설정 초기화
-quickplay.gui.keybinds.delete=제거
-quickplay.gui.keybinds.taken=이 키는 이미 Quickplay 기능에 할당되어 있습니다!
+replaymod.gui.exit=리플레이 나가기
 
-quickplay.moveableHudElement.small=작음
-quickplay.moveableHudElement.medium=보통
-quickplay.moveableHudElement.large=큼
-quickplay.moveableHudElement.xlarge=매우 큼
+replaymod.gui.mainmenu=메인 메뉴
+replaymod.gui.settings=설정
+
+replaymod.gui.keyframerepo.delete=이러한 키프레임을 삭제하시겠습니까?
+replaymod.gui.keyframerepo.overwrite=이러한 키프레임을 덮어쓰시겠습니까?
+
+replaymod.gui.restorereplay1=마인크래프트가 정상적으로 종료되지 않은 것 같습니다.
+replaymod.gui.restorereplay2=리플레이 "%1$s" (은)는 올바르게 저장되지 않았습니다.
+replaymod.gui.restorereplay3=복구하시겠습니까?
+
+replaymod.gui.loadentitytracker=엔티티 위치 로드: %%d%%%%
+replaymod.gui.loadquickmode=빠른 모드 로드: %%d%%%%
+replaymod.gui.noquickmode=빠른 모드는 마인크래프트 %1$s 이상에서만 사용할 수 있습니다.
+replaymod.gui.minimalmode.unsupported=이 기능은 현재 마인크래프트 버전에서는 사용할 수 없습니다.
+replaymod.gui.minimalmode.supportedversion=(Minecraft %1$s만 Replay Mod 버전에서 지원됩니다.)
+
+#Only change these if it's neccessary
+replaymod.gui.replayviewer=Replay 뷰어
+replaymod.gui.replaycenter=Replay 센터
+replaymod.gui.replayeditor=Replay 에디터
+
+#Login GUI
+replaymod.gui.login.title=ReplayMod.com에 로그인
+replaymod.gui.login.logging=로그인 중...
+replaymod.gui.login.incorrect=올바르지 않은 사용자 이름 또는 암호
+replaymod.gui.login.connectionerror=ReplayMod.com에 연결할 수 없음
+
+replaymod.gui.login.skip=스킵
+
+replaymod.gui.register.title=ReplayMod.com에 회원가입
+replaymod.gui.register.confirmpw=암호 확인
+
+replaymod.gui.register.disclaimer=계정을 등록하면 Replay Mod의 서비스 약관에 동의하게 됩니다: https://replaymod.com/legal/terms
+
+replaymod.gui.register.error.nomatch=암호가 일치하지 않습니다.
+replaymod.gui.register.error.shortusername=사용자 이름은 5자 이상이어야 합니다.
+replaymod.gui.register.error.invalidname=사용자 이름에는 문자와 숫자만 포함될 수 있습니다.
+replaymod.gui.register.error.shortpw=암호는 최소 5자 이상이어야 합니다.
+replaymod.gui.register.error.longpw=암호는 최대 1024자여야 합니다.
+replaymod.gui.register.error.authfailed=마인크래프트 계정을 인증할 수 없습니다.
+
+#Replay Viewer GUI
+replaymod.gui.viewer.rename.name=Replay 이름
+replaymod.gui.viewer.replayfolder=Replay 폴더 열기...
+replaymod.gui.viewer.bulkrender=%1$d 비디오 렌더
+
+replaymod.gui.viewer.delete.linea=이 Replay를 삭제하시겠습니까?
+replaymod.gui.viewer.delete.failed1=당신의 OS에서 Replay를 제거할 수 없습니다.
+replaymod.gui.viewer.delete.failed2=당신이 직접 지워야 합니다.
+replaymod.gui.viewer.delete.lineb='%1$s' (은)는 영원히 읽어버릴 것입니다! (긴 시간 동안!)
+
+replaymod.gui.viewer.download.title=Replay 파일을 다운로드하는 중입니다...
+replaymod.gui.viewer.download.message="%1$s"을(를) 다운로드하는 동안 잠시 기다려 주십시오.
+
+replaymod.gui.viewer.chooser.title=Replay 파일 선택
+replaymod.gui.viewer.chooser.message=컴퓨터에 "%1$s"의 수정된 버전이 있습니다. 어떤 Replay를 로드하시겠습니까?
+
+replaymod.gui.login.noacc=아직 계정이 없으십니까?
+
+#Replay Center GUI
+replaymod.gui.center.logoutcallback=로그아웃하시겠습니까?
+replaymod.gui.center.top.recent=최근의
+replaymod.gui.center.top.best=최고의
+replaymod.gui.center.top.downloaded=다운로드
+replaymod.gui.center.top.favorited=즐겨찾기
+replaymod.gui.center.top.search=검색
+
+replaymod.gui.center.search.filters=필터 검색
+replaymod.gui.center.search.gametype=게임 유형
+replaymod.gui.center.search.order=정렬 기준
+replaymod.gui.center.search.order.best=베스트
+replaymod.gui.center.search.order.recent=최근
+replaymod.gui.center.search.name=Replay 이름
+replaymod.gui.center.search.server=서버 IP (멀티플레이 전용)
+replaymod.gui.center.search.category=범주별 필터링
+replaymod.gui.center.search.version=버전별 필터링
+
+replaymod.gui.center.downloadrequired=Replay를 다운로드하여 등급을 지정하거나 즐겨찾기에 추가
+
+replaymod.gui.center.favorite=즐겨찾기
+replaymod.gui.center.unfavorite=즐겨찾기 취소
+
+replaymod.gui.center.author=by %1$s%2$s
+
+#Upload GUI
+replaymod.gui.upload.title=파일 업로드
+replaymod.gui.upload.start=업로드 시작
+replaymod.gui.upload.cancel=업로드 취소
+replaymod.gui.upload.tagshint=쉼표로 구분된 태그
+replaymod.gui.upload.namehint=Replay 제목
+replaymod.gui.upload.descriptionhint=설명
+replaymod.gui.upload.duration=Duration: %02dm%02ds
+replaymod.gui.upload.uploading=업로드 중...
+replaymod.gui.upload.success=파일이 성공적으로 업로드됨
+replaymod.gui.upload.canceled=업로드가 취소됨
+replaymod.gui.upload.hideip2=서버 IP 가림 (%s)
+replaymod.gui.upload.nothumbnail=썸네일이 없습니다. %1$s 키를 사용하여 Replay에서 썸네일을 만드십시오.
+replaymod.gui.upload.tryagain=다시 시도하시겠습니까?
+
+replaymod.gui.upload.error.name.length=Replay 이름은 5자에서 30자 사이여야 합니다.
+replaymod.gui.upload.error.name=Replay 이름에 특수 문자를 사용할 수 없습니다.
+replaymod.gui.upload.error.tags=태그는 문자만 포함할 수 있으며 쉼표를 사용하여 구분됩니다.
+
+#Replay Editor
+replaymod.gui.editor.savemode.override=원본 파일을 바꿉니다.
+replaymod.gui.editor.savemode.newfile=새 파일에 저장합니다.
+
+replaymod.gui.editor.trim.title=Trim Replay
+replaymod.gui.editor.connect.title=Replay 연결
+replaymod.gui.editor.modify.title=Modify Replay
+
+replaymod.gui.editor.trim.description=Replay 파일의 시작과 끝을 제거하고 지정된 타임스탬프 사이의 재생만 유지합니다.
+replaymod.gui.editor.connect.description=여러 Replay를 지정된 순서대로 연결합니다.
+replaymod.gui.editor.modify.description=Replay 파일을 수정할 수 있는 여러 필터를 제공합니다.
+
+replaymod.gui.editor.trim.marker=이벤트 마커를 선택
+
+replaymod.gui.editor.progress.title=재생 파일을 편집하는 중...
+replaymod.gui.editor.progress.pleasewait=재생을 편집하는 동안 잠시 기다려 주십시오.
+
+replaymod.gui.editor.progress.status.initializing=초기화 중
+replaymod.gui.editor.progress.status.writing.raw=Replay를 다시 쓰는 중...
+replaymod.gui.editor.progress.status.writing.final=디스크에 파일을 쓰는 중...
+replaymod.gui.editor.progress.status.finished=편집을 마쳤습니다!
+
+replaymod.gui.editor.disclaimer=Replay 편집기는 실험적인 기능으로 버그를 포함할 수 있습니다.
+
+#Replay Editor UI 2.0 (marker based UI)
+replaymod.gui.edit.apply=적용
+replaymod.gui.edit.split=분할 삽입
+replaymod.gui.edit.split.tooltip=표시된 지점에서 재생을 여러 재생으로 나눕니다.
+replaymod.gui.edit.cut.start=인서트 컷
+replaymod.gui.edit.cut.end=엔드컷
+replaymod.gui.edit.cut.tooltip=재생의 섹션을 잘라냅니다(제거).
+
+#Cancel Replay GUI
+replaymod.gui.cancelrender.title=렌더링 취소
+replaymod.gui.cancelrender.message=현재 렌더링 프로세스를 취소하시겠습니까?
+#Saving Replay GUI
+replaymod.gui.replaysaving.title=Replay 파일을 저장하는 중...
+replaymod.gui.replaymodified.message=Replay가 수정되었습니다. 변경 내용을 저장하시겠습니까?
+replaymod.gui.replaymodified.yes=수정된 Replay를 저장합니다.
+replaymod.gui.replaymodified.no=변경 사항을 취소합니다.
+replaymod.gui.replaymodified.warning1="%1$s" 라는 Replay가 이미 있습니다.
+replaymod.gui.replaymodified.warning2=교체하시겠습니까?
+
+#Player Overview GUI
+replaymod.gui.playeroverview.visible=Visible
+replaymod.gui.playeroverview.hideall=모두 숨기기
+replaymod.gui.playeroverview.showall=모두 표시
+replaymod.gui.playeroverview.spectate=관전 플레이어
+replaymod.gui.playeroverview.remembersettings=숨겨진 플레이어 기억하기
+replaymod.gui.playeroverview.remembersettings.description=Replay 파일에서 플레이어 가시성 저장
+
+#Replay Mod Settings GUI
+replaymod.gui.settings.title=Replay Mod 설정
+replaymod.gui.settings.default=기본
+
+replaymod.gui.settings.notifications=알림 활성화
+replaymod.gui.settings.recordserver=서버 녹화
+replaymod.gui.settings.recordsingleplayer=싱글플레이 녹화
+replaymod.gui.settings.indicator=녹화 표시기
+replaymod.gui.settings.pathpreview=경로 미리 보기 표시
+replaymod.gui.settings.camera=카메라
+replaymod.gui.settings.showchat=채팅 표시
+replaymod.gui.settings.interpolator=기본 인터폴레이터
+replaymod.gui.settings.autostartrecording=자동 녹화
+replaymod.gui.settings.rename_recording_dialog=대화 상자 이름 바꾸기
+replaymod.gui.settings.fullbrightness=최대 밝기
+replaymod.gui.settings.fullbrightness.gamma=감마
+replaymod.gui.settings.fullbrightness.nightvision=야간 투시
+replaymod.gui.settings.fullbrightness.both=둘 다
+
+#Replay Mod Keybindings
+replaymod.input.lighting=조명 전환
+replaymod.input.thumbnail=썸네일 캡처
+replaymod.input.playeroverview=플레이어 개요
+replaymod.input.clearkeyframes=키 프레임 지우기
+replaymod.input.synctimeline=시간 표시줄 동기화
+replaymod.input.keyframerepository=키 프레임 사전 설정 열기
+replaymod.input.rollclockwise=시계 방향으로 굴리기
+replaymod.input.rollcounterclockwise=시계 반대 방향으로 굴리기
+replaymod.input.resettilt=카메라 기울기 재설정
+replaymod.input.playpause=재생/일시 중지
+replaymod.input.marker=이벤트 마커 추가
+replaymod.input.pathpreview=경로 미리 보기 전환
+replaymod.input.assetmanager=자산 관리자
+replaymod.input.objectmanager=개체 관리자
+replaymod.input.settings=ReplayMod 설정
+replaymod.input.quickmode=빠른 모드
+replaymod.input.positionkeyframe=위치/관전자 키 프레임
+replaymod.input.positiononlykeyframe=위치 키 프레임
+replaymod.input.timekeyframe=시간 키 프레임
+replaymod.input.bothkeyframes=위치/관전자 + 시간 키 프레임
+
+# CameraControllers
+replaymod.camera.classic=Classic
+replaymod.camera.vanilla=Vanilla-ish
+
+#Keyframe Presets GUI
+replaymod.gui.keyframerepository.title=키프레임 저장소
+
+#Edit Keyframe GUI
+replaymod.gui.editkeyframe.title.pos=키프레임 위치 편집
+replaymod.gui.editkeyframe.title.time=키프레임 시간 편집
+replaymod.gui.editkeyframe.title.marker=이벤트 마커 편집
+replaymod.gui.editkeyframe.title.spec=관전자 키프레임 편집
+replaymod.gui.editkeyframe.xpos=X 위치
+replaymod.gui.editkeyframe.ypos=Y 위치
+replaymod.gui.editkeyframe.zpos=Z 위치
+replaymod.gui.editkeyframe.campitch=카메라 피치
+replaymod.gui.editkeyframe.camyaw=카메라 Yaw
+replaymod.gui.editkeyframe.camroll=카메라 굴리기(Roll)
+replaymod.gui.editkeyframe.timelineposition=타임라인 위치
+replaymod.gui.editkeyframe.markername=이벤트 마커 이름
+replaymod.gui.editkeyframe.timestamp=시간 색인
+
+replaymod.gui.editkeyframe.spec.method=관전 방법
+replaymod.gui.editkeyframe.spec.method.firstperson=First Person
+replaymod.gui.editkeyframe.spec.method.shoulder=Shoulder Camera
+
+replaymod.gui.editkeyframe.spec.method.shoulder.distance=카메라 거리
+replaymod.gui.editkeyframe.spec.method.shoulder.pitch=피치 오프셋
+replaymod.gui.editkeyframe.spec.method.shoulder.yaw=회전각도
+replaymod.gui.editkeyframe.spec.method.shoulder.smoothness=경로 평활도
+
+replaymod.gui.editkeyframe.interpolator=인터폴레이터
+replaymod.gui.editkeyframe.interpolator.default.name=기본 인터폴레이터
+replaymod.gui.editkeyframe.interpolator.default.desc=Replay 모드 설정에 정의된 기본 보간기를 사용합니다.
+replaymod.gui.editkeyframe.interpolator.catmullrom.name=캣멀 롬 스플라인 인터폴레이터
+replaymod.gui.editkeyframe.interpolator.catmullrom.desc=카메라 경로의 정확한 조임과 부드러움을 위해 사용자 지정 가능한 알파 값을 가진 캣멀 롬 스플라인을 계산합니다.
+replaymod.gui.editkeyframe.interpolator.catmullrom.alpha=알파:
+replaymod.gui.editkeyframe.interpolator.cubic.name=큐빅 스플라인 인터폴레이터
+replaymod.gui.editkeyframe.interpolator.cubic.desc=부드러운 카메라 경로를 위해 모든 점에 대한 입방 방정식 행렬을 계산합니다.
+replaymod.gui.editkeyframe.interpolator.linear.name=선형 보간기
+replaymod.gui.editkeyframe.interpolator.linear.desc=키 프레임 사이에 직선을 그립니다.
+
+#Render Settings GUI
+replaymod.gui.rendersettings.renderer=렌더링 방법
+
+replaymod.gui.rendersettings.renderer=렌더링 방법
+
+replaymod.gui.rendersettings.renderer.default=기본 렌더링
+replaymod.gui.rendersettings.renderer.tiled=타일 렌더링
+replaymod.gui.rendersettings.renderer.stereoscopic=입체 렌더링
+replaymod.gui.rendersettings.renderer.cubic=큐빅 렌더링
+replaymod.gui.rendersettings.renderer.equirectangular=등직사각형 렌더링
+replaymod.gui.rendersettings.renderer.ods=ODS 렌더링
+replaymod.gui.rendersettings.renderer.blend=블렌더 내보내기 [실험적]
+
+replaymod.gui.rendersettings.renderer.default.description=지정된 해상도로 비디오를 렌더링합니다. 가장 빠른 렌더링 옵션입니다.
+replaymod.gui.rendersettings.renderer.stereoscopic.description=비디오를 다양한 3D 기술에서 사용할 수 있는 입체(옆으로 나란히) 3D 동영상으로 렌더링합니다. 한쪽 눈의 이미지는 비디오 너비의 절반입니다.
+replaymod.gui.rendersettings.renderer.cubic.description=큐빅 투영을 사용하여 360도 파노라마 보기로 비디오를 렌더링합니다. 이 기능은 VR Player와 같은 여러 360도 비디오 플레이어(및 Oculus Liff)에서 사용할 수 있습니다.
+replaymod.gui.rendersettings.renderer.equirectangular.description=등각 투영법을 사용하여 360도 파노라마 보기로 비디오를 렌더링합니다. 이 기능은 YouTube의 새로운 360도 비디오 기능과 여러 비디오 플레이어(예: VR Player)에서 사용할 수 있습니다.
+replaymod.gui.rendersettings.renderer.ods.description=VR 비디오라고도 하는 입체 3D 360도 파노라마 보기로 비디오를 렌더링합니다. 이 기능은 YouTube의 새로운 VR 비디오 기능으로 사용할 수 있습니다.
+replaymod.gui.rendersettings.renderer.blend.description=보이는 형상을 블렌더 소프트웨어를 사용하여 열 수 있는 .blend 파일로 내보냅니다. 고도의 실험: RAM이 많이 필요하고 알려진 문제가 상당히 많으며 때로는 손상된 블렌더 파일을 생성합니다.
+
+replaymod.gui.rendersettings.customresolution=비디오 해상도
+replaymod.gui.rendersettings.customresolution.warning.yuv420=이 사전 설정의 경우 너비 및 높이 값은 짝수여야 합니다.
+replaymod.gui.rendersettings.customresolution.warning.yuv420.cubic=이 사전 설정의 경우 높이를 6으로 나눌 수 있어야 합니다.
+replaymod.gui.rendersettings.customresolution.warning.cubic.height=큐빅 렌더링에는 높이를 3으로 나누어야 합니다.
+replaymod.gui.rendersettings.bitrate=비트레이트
+replaymod.gui.rendersettings.framerate=비디오 프레임
+replaymod.gui.rendersettings.chromakey=크로마 키
+replaymod.gui.rendersettings.nametags=렌더링 이름 태그
+replaymod.gui.rendersettings.outputfile=출력 파일
+replaymod.gui.rendersettings.sphericalFov=구면 FOV
+replaymod.gui.rendersettings.sphericalmetadata=구형 메타데이터 주입
+replaymod.gui.rendersettings.sphericalmetadata.error=구형 메타데이터는 MP4 형식의 등각 및 ODS 비디오에만 추가할 수 있습니다.
+replaymod.gui.rendersettings.depthmap=깊은 맵
+replaymod.gui.rendersettings.depthmap.onlyexr=깊은 맵 내보내기는 OpenEXR 형식에서만 지원됩니다.
+replaymod.gui.rendersettings.camerapath=카메라 경로 내보내기
+
+replaymod.gui.rendersettings.command=명령
+replaymod.gui.rendersettings.arguments=명령줄 인수
+replaymod.gui.rendersettings.ffmpeg.description=고급 사용자인 경우 비디오를 내보내는 데 사용되는 명령줄 매개 변수를 사용자 지정할 수 있습니다. 자세한 내용은 http://replaymod.com/docs을 참조하십시오.
+
+replaymod.gui.rendersettings.stabilizecamera=카메라 안정화
+
+replaymod.gui.rendersettings.video=비디오 설정
+replaymod.gui.rendersettings.advanced=고급 설정
+replaymod.gui.rendersettings.commandline=명령줄 설정
+
+replaymod.gui.rendersettings.presets=인코딩 사전 설정
+replaymod.gui.rendersettings.presets.mp4.custom=MP4 - 사용자 지정 비트레이트
+replaymod.gui.rendersettings.presets.mp4.high=MP4 - 높은 품질
+replaymod.gui.rendersettings.presets.mp4.default=MP4 - 기본 품질
+replaymod.gui.rendersettings.presets.mp4.potato=MP4 - 사진 품질
+replaymod.gui.rendersettings.presets.webm.custom=WEBM - 사용자 지정 비트레이트
+replaymod.gui.rendersettings.presets.mkv.lossless=MKV - 무손실
+replaymod.gui.rendersettings.presets.blend=혼합 파일
+replaymod.gui.rendersettings.presets.png=PNG 시퀀스
+replaymod.gui.rendersettings.presets.exr=OpenEXR 시퀀스
+
+replaymod.gui.rendersettings.antialiasing=안티-앨리어싱
+replaymod.gui.rendersettings.antialiasing.none=없음
+replaymod.gui.rendersettings.antialiasing.x2=2x
+replaymod.gui.rendersettings.antialiasing.x4=4x
+replaymod.gui.rendersettings.antialiasing.x8=8x
+
+#Render Queue GUI
+replaymod.gui.renderqueue.title=렌더링 대기열
+replaymod.gui.renderqueue.jobname=작업 이름:
+replaymod.gui.renderqueue.add=현재 구성 추가
+replaymod.gui.renderqueue.renderall=모두 렌더
+replaymod.gui.renderqueue.renderselected=렌더 선택됨
+
+#Rendering GUI
+replaymod.gui.rendering.title=렌더링 비디오
+replaymod.gui.rendering.pause=렌더링 일시 정지
+replaymod.gui.rendering.resume=렌더링 다시 시작
+replaymod.gui.rendering.cancel=렌더링 취소
+replaymod.gui.rendering.cancel.callback=확실합니까?
+replaymod.gui.rendering.preview=미리 보기 표시(성능이 저하될 수 있음)
+replaymod.gui.rendering.progress=렌더링된 프레임: %1$d / %2$d
+replaymod.gui.rendering.timetaken=렌더링 시간
+replaymod.gui.rendering.timeleft=남은 시간
+
+#Render Errors
+replaymod.gui.rendering.error.title=렌더링 실패
+replaymod.gui.rendering.error.message=비디오를 렌더링하려면 ffmpeg가 설치되어 있어야 합니다. http://ffmpeg.org
+replaymod.gui.rendering.error.ffmpeglog=FFmpeg 출력:
+replaymod.gui.rendering.error.ffmpegargs.1=명령줄 인수를 수정한 것 같습니다.
+replaymod.gui.rendering.error.ffmpegargs.2=기본값을 재설정하고 다시 시도하시겠습니까?
+
+#Ingame Menu
+replaymod.gui.ingame.menu.addposkeyframe=위치 키프레임을 추가
+replaymod.gui.ingame.menu.removeposkeyframe=위치 키프레임을 제거
+replaymod.gui.ingame.menu.addspeckeyframe=관전자 키프레임을 추가
+replaymod.gui.ingame.menu.removespeckeyframe=관전자 키프레임을 제거
+replaymod.gui.ingame.menu.addtimekeyframe=시간 키프레임 추가
+replaymod.gui.ingame.menu.removetimekeyframe=시간 키프레임 제거
+replaymod.gui.ingame.menu.pause=Replay 일시정지
+replaymod.gui.ingame.menu.unpause=Replay 일시정지 해제
+replaymod.gui.ingame.menu.renderpath=카메라 경로 렌더링
+replaymod.gui.ingame.menu.playpath=커서 위치에서 카메라 경로 재생
+replaymod.gui.ingame.menu.playpathfromstart=시작부터 카메라 경로 재생
+replaymod.gui.ingame.menu.pausepath=카메라 경로 일시 중지
+replaymod.gui.ingame.menu.zoomin=확대
+replaymod.gui.ingame.menu.zoomout=축소
+
+replaymod.gui.ingame.unnamedmarker=이름 없는 이벤트 마커
+replaymod.gui.ingame.autoactivating=이 키 바인딩은 적절한 시점에 자동으로 활성화될 수 있습니다.
+replaymod.gui.ingame.autoactivating.disable=Ctrl-클릭하여 자동 활성화를 비활성화합니다.
+replaymod.gui.ingame.autoactivating.enable=Ctrl-클릭하여 자동 활성화를 활성화합니다.
+replaymod.gui.ingame.first_keyframe_not_at_start_warning=방금 첫 번째 키 프레임을 배치했는데 00:00이 아닙니다.\n\n일반적으로 \n비디오 시간 표시 막대(아래쪽)가 작동하는 방식을 잘못 이해했음을 나타냅니다.\n\n 위쪽 시간 표시 막대는 재생에서 현재 시간을 표시하는 반면 아래쪽 시간 표시 막대는 만들고 있는 비디오의 시간을 표시합니다.\n비디오는 항상 00:00에 시작합니다! 첫 번째 키 프레임이 00:00에 있지 않으면 첫 번째 키 프레임 시간까지 비디오가 정지된 상태로 표시됩니다!
+
+#Clear Keyframe Callback
+replaymod.gui.clearcallback.title=모든 키프레임을 지우시겠습니까?
+
+#Asset Manager Gui
+replaymod.gui.assets.title=자산 관리자
+replaymod.gui.assets.filechooser=자산 파일
+replaymod.gui.assets.defaultname=새 자산
+replaymod.gui.assets.emptylist=사용 가능한 자산 없음
+replaymod.gui.assets.namehint=자산 이름
+replaymod.gui.assets.changefile=자산 파일 변경
+replaymod.gui.assets.noselection=선택한 자산이 없습니다.
+
+#Object Manager Gui
+replaymod.gui.objects.properties.anchor=앵커 포인트
+replaymod.gui.objects.properties.position=위치
+replaymod.gui.objects.properties.scale=비율
+replaymod.gui.objects.properties.orientation=오리엔테이션
+replaymod.gui.objects.properties.opacity=투명도
+replaymod.gui.objects.properties.name=개체 이름
+replaymod.gui.objects.empty=추가된 개체 없음
+replaymod.gui.objects.defaultname=새 개체
+replaymod.gui.objects=사용자 지정 개체
+
+#Errors
+replaymod.error.unknownrestriction1=이 Replay는 현재 버전으로 재생할 수 없습니다.
+replaymod.error.unknownrestriction2=알 수 없는 %s을(를) 적용하려고 했습니다.
+replaymod.error.negativetime1=일부 시간 키 프레임이 고장났습니다.
+replaymod.error.negativetime2=시간 뒤로 가는 것은 지원되지 않습니다.
+replaymod.error.negativetime3=잘못된 부품은 빨간색으로 표시됩니다.
+
+#Replay Mod Incompatibility Warning
+replaymod.gui.modwarning.title=비호환성이 감지되었습니다.
+replaymod.gui.modwarning.message1=현재와 호환되지 않을 수 있습니다.
+replaymod.gui.modwarning.message2=마인크래프트 버전과 이 Replay가 탐지되었습니다.
+replaymod.gui.modwarning.message3=이 Replay를 로드하면 오류가 발생하거나 충돌이 발생할 수 있습니다.
+replaymod.gui.modwarning.name=모드 이름:
+replaymod.gui.modwarning.id=모드 Id:
+replaymod.gui.modwarning.missing=없어진 모드
+replaymod.gui.modwarning.version=다른 모드 버전입니다.
+replaymod.gui.modwarning.version.expected=예상
+replaymod.gui.modwarning.version.found=발견
+
+#OpenEye
+replaymod.gui.offeropeneye1=OpenEye를 설치하시겠습니까?
+replaymod.gui.offeropeneye2=OpenEye는 익명 정보를 수집하는 모드입니다.
+replaymod.gui.offeropeneye3=작동 중인 모드와 충돌에 대해 설명합니다.
+replaymod.gui.offeropeneye4=
+replaymod.gui.offeropeneye5=OpenEye는 언제든지 비활성화할 수 있으며 완전히 옵션입니다.
+replaymod.gui.offeropeneye6=자세한 내용은 https://openeye.openmods.info/faq에서 확인할 수 있습니다.
+replaymod.gui.offeropeneye7=예를 클릭하면 OpenEye가 다운로드되어 모드 폴더에 저장됩니다.
+replaymod.gui.offeropeneye8=다음에 마인크래프트를 시작할 때 활성화됩니다(NF Client 제작자의 조언: 꼭 설치하지 않아도 됩니다)
+
+#Advanced Screenshots Gui
+replaymod.gui.advancedscreenshots.title=스크린샷 설정
+replaymod.gui.advancedscreenshots.create=스크린샷 찍기
+replaymod.gui.advancedscreenshots.resolution=해상도
+
+# Screenshot Finished Gui
+replaymod.gui.advancedscreenshots.finished.description=스크린샷을 만들었습니다!
+replaymod.gui.advancedscreenshots.finished.description.360=360° 스크린샷을 만들었습니다!
+replaymod.gui.advancedscreenshots.finished.description.veer=VeeR.tv의 VR에서 이미지를 업로드하고 보거나 디스크에서 엽니다.
+replaymod.gui.advancedscreenshots.finished.upload.veer=VeeR.tv에 업로드하십시오.
+replaymod.gui.advancedscreenshots.finished.showfile=디스크에 파일 표시

@@ -2,10 +2,11 @@
   "homepage": "https://github.com/najoan125/NF-Client-installer/releases/latest",
   "1.8.9": {
     "1.9.0": "버전 형식을 유의적 버전 2.0.0-ko2로 변경, Patcher, Optifine 설정파일 업데이트, CustomMainMenu -> NF Main Buttons 로 변경, ReAuth 모드 삭제(메인메뉴에서 비슷한 기능 이용 가능), Hypixel 명령어 자동 완성 기능 추가(친구 닉네임, 길드)",
-	"1.9.1": "Patcher 업데이트, Scrollable Tooltips 업데이트, 메인메뉴 GUI 개선, 나죠안의 커스텀 팩 서바이벌 인벤토리에 파란색 픽셀이 보이는 이슈 해결"
+	"1.9.1": "Patcher 업데이트, Scrollable Tooltips 업데이트, 메인메뉴 GUI 개선, 나죠안의 커스텀 팩 서바이벌 인벤토리에 파란색 픽셀이 보이는 이슈 해결",
+	"1.9.2": "리플레이 모드 업데이트"
   },
   "promos": {
-    "1.8.9-latest": "1.9.1",
-    "1.8.9-recommended": "1.9.1"
+    "1.8.9-latest": "1.9.2",
+    "1.8.9-recommended": "1.9.2"
   }
 }
