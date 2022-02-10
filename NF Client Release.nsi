@@ -125,7 +125,7 @@ esx:
   File "³ªÁÒ¾È\minecraft\essential\onboarding.json"
   goto ifaddon
 ifaddon:
-  iffileexists "$INSTDIR\mods\1.12.2\ScreenshotToClipboard-1.12.2-1.0.1.jar" addon nonaddon
+  iffileexists "$INSTDIR\mods\1.12.2\slf4j-api-1.7.25.jar" addon nonaddon
 addon:
   RMDir /r "$INSTDIR\mods\1.8.9"
   SetOutPath "$INSTDIR"
