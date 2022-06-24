@@ -70,7 +70,7 @@ Function Form1
 !insertmacro MUI_INSTALLOPTIONS_DISPLAY_RETURN "Form1.ini"
 FunctionEnd
 
-Name "${PRODUCT_NAME} ${PRODUCT_VERSION}"
+Name "${PRODUCT_NAME} v${PRODUCT_VERSION}"
 OutFile "NF Client Setup.exe"
 RequestExecutionLevel admin
 InstallDir "$APPDATA\.nfclient"
