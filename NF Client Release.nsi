@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "NF Client"
-!define PRODUCT_VERSION "1.9.6" ;download PRODUCT_VERSION.7z
+!define PRODUCT_VERSION "1.9.7" ;download PRODUCT_VERSION.7z
 !define PRODUCT_PUBLISHER "NF Client"
 !define PRODUCT_WEB_SITE "https://www.nfclient.kro.kr"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
@@ -345,6 +345,8 @@ keep:
   File "나죠안\minecraft\ReachDisplayMod\values.cfg"
   Messagebox MB_YESNO "옵티파인(optifine)권장 설정을 적용하시겠습니까??$\n옵티파인 권장설정을 적용하면 더 원할한 게임이 가능합니다." IDYES of IDNO keep2
 keep2:
+  iffileexists "$INSTDIR\libraries\net\minecraftforge\forge\1.8.9-11.15.1.2318-1.8.9\forge-1.8.9-11.15.1.2318-1.8.9.jar" keep3 forgeinstall
+forgeinstall:
   SetOverwrite on
   SetOutPath "$INSTDIR"
   ;forge
