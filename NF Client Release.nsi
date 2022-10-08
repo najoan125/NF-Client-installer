@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "NF Client"
-!define PRODUCT_VERSION "1.9.7" ;download PRODUCT_VERSION.7z
+!define PRODUCT_VERSION "1.9.8" ;download PRODUCT_VERSION.7z
 !define PRODUCT_PUBLISHER "NF Client"
 !define PRODUCT_WEB_SITE "https://www.nfclient.kro.kr"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
@@ -118,11 +118,12 @@ Section "MainSection" SEC01
   ;delete "$INSTDIR\mods\*.*"
   iffileexists "$INSTDIR\essential\config.toml" eso esx
 eso:
-  goto ifaddon
+  iffileexists "$INSTDIR\essential\patched1" ifaddon esx
 esx:
   SetOutPath "$INSTDIR\essential"
   File "나죠안\minecraft\essential\config.toml"
   File "나죠안\minecraft\essential\onboarding.json"
+  File "나죠안\minecraft\essential\patched1"
   goto ifaddon
 ifaddon:
   iffileexists "$INSTDIR\mods\1.12.2\slf4j-api-1.7.25.jar" addon nonaddon
