@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "NF Client"
-!define PRODUCT_VERSION "1.9.8" ;download PRODUCT_VERSION.7z
+!define PRODUCT_VERSION "1.9.9" ;download PRODUCT_VERSION.7z
 !define PRODUCT_PUBLISHER "NF Client"
 !define PRODUCT_WEB_SITE "https://www.nfclient.kro.kr"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
